@@ -7,7 +7,6 @@ public class WeldMapperMain {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
 		
-		// Getting the area of work
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
 		String workLocation = input.nextLine();
@@ -21,6 +20,12 @@ public class WeldMapperMain {
         gettngDirection.CaptureDirection();
         System.out.println(date);
         
+        // Listing out the Code choices for data collection with the Codes class
+        Codes codeChoices = new Codes();
+        codeChoices.displayCodes();
+        System.out.print("Enter the Code to collect data for:");
+        String codeChoice = input.nextLine();
+        System.out.println(codeChoice);
         input.close();
 	}
 }
