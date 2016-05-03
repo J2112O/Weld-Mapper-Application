@@ -1,11 +1,15 @@
+
 import java.util.Date;
 import java.util.Scanner;
+import codesAndAttributes.*;
 
 public class WeldMapperMain {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
+		Weld weld = new Weld();
+		Sag sag = new Sag();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -19,13 +23,15 @@ public class WeldMapperMain {
         FlowLine gettngDirection = new FlowLine();
         gettngDirection.CaptureDirection();
         System.out.println(date);
-        
         // Listing out the Code choices for data collection with the Codes class
         Codes codeChoices = new Codes();
         codeChoices.displayCodes();
-        System.out.print("Enter the Code to collect data for:");
+        System.out.print("Enter the Code to collect data for: ");
         String codeChoice = input.nextLine();
         System.out.println(codeChoice);
+        
+        sag.sagDataCollect();
+
         input.close();
 	}
 }

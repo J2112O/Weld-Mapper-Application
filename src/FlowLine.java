@@ -11,6 +11,6 @@ public class FlowLine {
         System.out.print("manner (ie \"North to South\"): ");
         String direction = input.nextLine();
         System.out.println(direction.toUpperCase());
-    }
 
-}
+    }
+ }
