@@ -1,3 +1,6 @@
+/*
+ *	This package captures all the information for each weld 
+ */
 package codesAndAttributes;
 import java.util.Scanner;
 
@@ -5,6 +8,9 @@ public class Weld {
 	
 	Scanner input = new Scanner(System.in);
 	
+	// An array of the types of welds
+	private String[] attributeTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
+			"Transition","Existing"};
 	private int gpsShot;
 	private String weldType;
 	private String weldId;
@@ -14,6 +20,9 @@ public class Weld {
 	private double lengthAhead;
 	private int ngc;
 	private double cover;
+	private String wallChange;
+	private String pipeLocation;
+	private String welderInitials;
 	private String misc;
 	
 	public int getGpsShot() {
@@ -76,11 +85,31 @@ public class Weld {
 	public void setMisc(String misc) {
 		this.misc = misc;
 	}
+	public String getWallChange() {
+		return wallChange;
+	}
+	public void setWallChange(String wallChange) {
+		this.wallChange = wallChange;
+	}
+	public String getPipeLocation() {
+		return pipeLocation;
+	}
+	public void setPipeLocation(String pipeLocation) {
+		this.pipeLocation = pipeLocation;
+	}
+	public String getWelderInitials() {
+		return welderInitials;
+	}
+	public void setWelderInitials(String welderInitials) {
+		this.welderInitials = welderInitials;
+	}
 	public void weldDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
 		this.gpsShot = input.nextInt();
 		input.nextLine();		
-		System.out.print("Enter the Weld Type (Mainline,Tie-in,Fabrication,Factory): ");
+		System.out.println("Enter the Weld Type ");
+		displayTypes(attributeTypes);
+		System.out.print(": ");
 		this.weldType = input.nextLine();
 		System.out.print("Enter the Weld ID (X-Ray Number): ");
 		this.weldId = input.nextLine();
@@ -99,9 +128,23 @@ public class Weld {
 		System.out.print("Enter the Cover: ");
 		this.cover= input.nextDouble();
 		input.nextLine();
+		System.out.print("Wall change? (Yes,No or None);");
+		this.wallChange = input.nextLine();
+		System.out.print("Pipe in ditch(Yes or No): ");
+		this.pipeLocation = input.nextLine();
+		System.out.println("Welder initialis: ");
+		this.welderInitials = input.nextLine();
 		System.out.print("Enter any Notes(None if no notes): ");
 		this.misc= input.nextLine();
 		input.close();
 	}
+	
+	public void displayTypes(String[] x) {
+		for(int i = 0; i < x.length; i++) {
+			System.out.println(x[i]);
+		}
+	}
+	
+	
 	
 }

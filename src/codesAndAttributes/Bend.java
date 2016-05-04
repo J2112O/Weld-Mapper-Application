@@ -1,11 +1,17 @@
+/*
+ *	This class is used for two kinds of Bends. Sags and Overbends both. 
+ **/
 package codesAndAttributes;
 import java.util.Scanner;
+//import java.util.Set;
 
-public class Sag {
+public class Bend {
 	
 	Scanner input = new Scanner(System.in);
 	
+
 	private int gpsShot;
+	private String kind;	
 	private String type;
 	private double degree;
 	private double cover;
@@ -41,14 +47,23 @@ public class Sag {
 	public void setNgc(int ngc) {
 		this.ngc = ngc;
 	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
 	
-	public void sagDataCollect() {
+	public void bendDataCollect() {
+		
 		System.out.print("Enter the GPS Point for this Code: ");
 		this.gpsShot = input.nextInt();
+		System.out.print("Sag or Overbend? ");
+		this.kind = input.nextLine();
 		input.nextLine();
-		System.out.print("Enter the Type of Sag (Field, Factory, or Forged): ");
+		System.out.print("Enter the Type(Field, Factory, or Forged): ");
 		this.type = input.nextLine();
-		System.out.println("Enter the degree of the Sag: ");
+		System.out.format("Enter the degree: ");
 		this.degree = input.nextDouble();
 		input.nextLine();
 		System.out.print("Enter the Cover: ");
@@ -58,4 +73,5 @@ public class Sag {
 		this.ngc = input.nextInt();
 		input.nextLine();
 	}
+	
 }
