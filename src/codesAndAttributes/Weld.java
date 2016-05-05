@@ -107,11 +107,11 @@ public class Weld {
 		System.out.print("Enter the GPS Point for this Code: ");
 		this.gpsShot = input.nextInt();
 		input.nextLine();		
-		System.out.println("Enter the Weld Type ");
+		System.out.println("Enter the Weld Type.. ");
 		displayTypes(attributeTypes);
 		System.out.print(": ");
 		this.weldType = input.nextLine();
-		System.out.print("Enter the Weld ID (X-Ray Number): ");
+		System.out.print("Enter the Weld ID(X-Ray Number): ");
 		this.weldId = input.nextLine();
 		System.out.print("Enter the Pipe(Name or ID) back: ");
 		this.pipeBack = input.nextLine();
@@ -128,7 +128,7 @@ public class Weld {
 		System.out.print("Enter the Cover: ");
 		this.cover= input.nextDouble();
 		input.nextLine();
-		System.out.print("Wall change? (Yes,No or None);");
+		System.out.print("Wall change? (Yes or No) ");
 		this.wallChange = input.nextLine();
 		System.out.print("Pipe in ditch(Yes or No): ");
 		this.pipeLocation = input.nextLine();
