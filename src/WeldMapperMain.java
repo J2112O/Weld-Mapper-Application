@@ -8,9 +8,7 @@ public class WeldMapperMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
-		//Weld weld = new Weld();
-		//Bend bend= new Bend();
-		ExistingFacility exFacility = new ExistingFacility();
+		ComboBend cmbo = new ComboBend();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -31,7 +29,7 @@ public class WeldMapperMain {
         String codeChoice = input.nextLine();
         System.out.println(codeChoice);
         
-        exFacility.existingFacilityDataCollect();
+        cmbo.comboDataCollect();
 
         input.close();
 	}

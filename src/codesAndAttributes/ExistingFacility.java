@@ -65,7 +65,6 @@ public class ExistingFacility {
 		this.gpsShot = gpsShot;
 	}	
 	
-	
 	public void existingFacilityDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
 		this.gpsShot = input.nextInt();
