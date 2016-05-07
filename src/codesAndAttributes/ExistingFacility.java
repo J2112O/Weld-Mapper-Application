@@ -14,7 +14,7 @@ public class ExistingFacility {
 	private String notes;
 	
 	// An array of the Depth Methods
-	private String[] depthMethodTypes = {"Open Cut","Locator","Exposed","Potholed"};
+	private String[] depthMethodTypes = {"Open Cut","Locator","Exposed","Potholed","Pin Flag"};
 	
 	public String getOwner() {
 		return owner;
@@ -71,10 +71,10 @@ public class ExistingFacility {
 		input.nextLine();		
 		System.out.println("Enter the owner of the Existing Facility: ");
 		this.owner = input.nextLine();
-		System.out.print("Enter the size(in inches) of the Existing Facility: ");
+		System.out.print("Enter the size (in inches) of the Existing Facility: ");
 		this.size = input.nextInt();
 		input.nextLine();
-		System.out.print("Crossing proposed route?(Yes or No) ");
+		System.out.print("Crossing proposed route? (Yes or No) ");
 		this.crossingProp = input.nextLine();
 		System.out.print("Depth Method.. \n");
 		displayDepthMethods(depthMethodTypes);
@@ -86,7 +86,7 @@ public class ExistingFacility {
 		System.out.print("Clearance in Decimal Feet: ");
 		this.clearanceInDecFeet = input.nextDouble();
 		input.nextLine();
-		System.out.print("Enter any Notes(None if no notes): ");
+		System.out.print("Enter any Notes or None: ");
 		this.notes = input.nextLine();
 		input.close();
 		}

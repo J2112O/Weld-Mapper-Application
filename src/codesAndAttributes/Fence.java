@@ -7,8 +7,7 @@ public class Fence {
 	
 	// An Array of the fence types
 	private String[] fenceTypes = {"Barbwire","Chainlink","Chainlink w/Barb","Chicken Wire",
-			"Electric","How Wire","Metal","Pipe","Plastic","Rock","Steel Cable","Wood"};
-			
+			"Electric","Hog Wire","Metal","Pipe","Plastic","Rock","Steel Cable","Wood"};
 	
 	private int gpsShot;
 	private String type;
@@ -62,7 +61,7 @@ public class Fence {
 		System.out.print("Enter the GPS Point for this Code: ");
 		this.gpsShot = input.nextInt();
 		input.nextLine();
-		System.out.print("Enter the Type of fence.. \n");
+		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
 		System.out.print(": ");
 		this.type = input.nextLine();

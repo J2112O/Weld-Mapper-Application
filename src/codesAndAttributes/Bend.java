@@ -61,7 +61,7 @@ public class Bend {
 		System.out.print("Sag or Overbend? ");
 		this.kind = input.nextLine();
 		input.nextLine();
-		System.out.print("Enter the Type(Field, Factory, or Forged): ");
+		System.out.print("Enter the Type (Field, Factory, or Forged): ");
 		this.type = input.nextLine();
 		System.out.format("Enter the degree: ");
 		this.degree = input.nextDouble();

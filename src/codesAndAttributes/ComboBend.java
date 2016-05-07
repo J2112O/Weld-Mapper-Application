@@ -9,13 +9,15 @@ public class ComboBend {
 	Scanner input = new Scanner(System.in);
 	
 	String[] bendTypes = {"Field","Forged","Hot"};
-	String[] bendDirections = {"Sidebend Left","Sidebend Right","Overbend","Sag"};
+	String[] bendDirections = {"SBLT","SBRT","Overbend","Sag"};
 	
+	private int gpsShot;
 	private String bendType;
 	private String direction1;
 	private double degree1;
 	private String direction2;
 	private double degree2;
+	private double cover;
 	private String notes;
 	
 	public void displayBendTypes(String[] x) {
@@ -59,9 +61,23 @@ public class ComboBend {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	
+	public int getGpsShot() {
+		return gpsShot;
+	}
+	public void setGpsShot(int gpsShot) {
+		this.gpsShot = gpsShot;
+	}
+	public double getCover() {
+		return cover;
+	}
+	public void setCover(double cover) {
+		this.cover = cover;
+	}
 	public void comboDataCollect() {
-		System.out.println("Enter the Bend Type: \n");
+		System.out.print("Enter the GPS Point for this Code: ");
+		this.gpsShot = input.nextInt();
+		input.nextLine();
+		System.out.print("Enter the Bend Type: \n");
 		displayBendTypes(bendTypes);
 		System.out.print(": ");
 		this.bendType = input.nextLine();
@@ -78,6 +94,9 @@ public class ComboBend {
 		this.direction2 = input.nextLine();
 		System.out.print("Degree 2: ");
 		this.degree2 = input.nextDouble();
+		input.nextLine();
+		System.out.print("Enter the Cover: ");
+		this.cover = input.nextDouble();
 		input.nextLine();
 		System.out.println("Notes: ");
 		input.nextLine();

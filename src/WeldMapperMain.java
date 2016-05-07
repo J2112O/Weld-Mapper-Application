@@ -8,7 +8,6 @@ public class WeldMapperMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
-		ComboBend cmbo = new ComboBend();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -28,9 +27,7 @@ public class WeldMapperMain {
         System.out.print("Enter the Code to collect data for: ");
         String codeChoice = input.nextLine();
         System.out.println(codeChoice);
-        
-        cmbo.comboDataCollect();
-
+                
         input.close();
 	}
 }

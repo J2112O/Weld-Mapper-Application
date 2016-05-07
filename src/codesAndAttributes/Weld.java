@@ -10,7 +10,8 @@ public class Weld {
 	
 	// An array of the types of welds
 	private String[] attributeTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
-			"Transition","Existing"};
+			"Transition","Existing","Repair"};
+	
 	private int gpsShot;
 	private String weldType;
 	private String weldId;
@@ -111,11 +112,11 @@ public class Weld {
 		displayTypes(attributeTypes);
 		System.out.print(": ");
 		this.weldType = input.nextLine();
-		System.out.print("Enter the Weld ID(X-Ray Number): ");
+		System.out.print("Enter the Weld ID (X-Ray Number): ");
 		this.weldId = input.nextLine();
-		System.out.print("Enter the Pipe(Name or ID) back: ");
+		System.out.print("Enter the Pipe (Name or ID) back: ");
 		this.pipeBack = input.nextLine();
-		System.out.print("Enter the Pipe(Name or ID) ahead: ");
+		System.out.print("Enter the Pipe (Name or ID) ahead: ");
 		this.pipeAhead = input.nextLine();
 		System.out.print("Enter the Heat ahead: ");
 		this.heatAhead = input.nextLine();
@@ -130,11 +131,11 @@ public class Weld {
 		input.nextLine();
 		System.out.print("Wall change? (Yes or No) ");
 		this.wallChange = input.nextLine();
-		System.out.print("Pipe in ditch(Yes or No): ");
+		System.out.print("Pipe in ditch (Yes or No): ");
 		this.pipeLocation = input.nextLine();
 		System.out.println("Welder initialis: ");
 		this.welderInitials = input.nextLine();
-		System.out.print("Enter any Notes(None if no notes): ");
+		System.out.print("Enter any Notes (None if no notes): ");
 		this.misc= input.nextLine();
 		input.close();
 	}
