@@ -1,27 +1,25 @@
-package codesAndAttributes;
+/*
+ * This class captures existing Fence crossings. 
+ */
 
+package codesAndAttributes;
 import java.util.Scanner;
-public class Fence {
+public class Fence extends BasicAttributes {
 	
 	Scanner input = new Scanner(System.in);
+	
+	// Creating and instance of BasicAttributes Class
+	BasicAttributes bA = new BasicAttributes();
 	
 	// An Array of the fence types
 	private String[] fenceTypes = {"Barbwire","Chainlink","Chainlink w/Barb","Chicken Wire",
 			"Electric","Hog Wire","Metal","Pipe","Plastic","Rock","Steel Cable","Wood"};
 	
-	private int gpsShot;
 	private String type;
 	private String shotLocation;
 	private double height;
 	private int strandCount;
-	private String notes;
-	
-	public int getGpsShot() {
-		return gpsShot;
-	}
-	public void setGpsShot(int gpsShot) {
-		this.gpsShot = gpsShot;
-	}
+		
 	public String getType() {
 		return type;
 	}
@@ -46,12 +44,6 @@ public class Fence {
 	public void setStrandCount(int strandCount) {
 		this.strandCount = strandCount;
 	}
-	public String getNotes() {
-		return notes;
-	}
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
 	public void displayFenceTypes(String[] x) {
 		for(int i = 0; i < x.length; i++) {
 			System.out.println(x[i]);
@@ -59,7 +51,7 @@ public class Fence {
 	}
 	public void fenceDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		this.gpsShot = input.nextInt();
+		bA.gpsShot= input.nextInt();
 		input.nextLine();
 		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
@@ -74,7 +66,7 @@ public class Fence {
 		this.strandCount = input.nextInt();
 		input.nextLine();
 		System.out.print("Notes: ");
-		this.notes = input.nextLine();
+		bA.notes= input.nextLine();
 		input.close();
 				
 	}

@@ -19,11 +19,11 @@ public class ComboBend extends BasicAttributes {
 	private String direction2;
 	private double degree2;
 	
-	public void displayBendTypes(String[] x) {
+	public void displayBendDirections(String[] x) {
 		for(int i = 0; i < x.length; i++) {
 			System.out.println(x[i]);
-		}
-	}
+		} 
+	} 
 	public String getBendType() {
 		return bendType;
 	}
@@ -60,18 +60,18 @@ public class ComboBend extends BasicAttributes {
 		bA.gpsShot = input.nextInt();
 		input.nextLine();
 		System.out.print("Enter the Bend Type: \n");
-		displayBendTypes(bA.bendTypes);
+		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
 		this.bendType = input.nextLine();
 		System.out.print("Direction 1: \n");
-		displayBendTypes(bendDirections);
+		displayBendDirections(bendDirections);
 		System.out.println(": ");
 		this.direction1 = input.nextLine();
 		System.out.print("Degree 1: ");
 		this.degree1 = input.nextDouble();
 		input.nextLine();
 		System.out.print("Direction 2: \n");
-		displayBendTypes(bendDirections);
+		displayBendDirections(bendDirections);
 		System.out.print(": ");
 		this.direction2 = input.nextLine();
 		System.out.print("Degree 2: ");
@@ -82,7 +82,7 @@ public class ComboBend extends BasicAttributes {
 		input.nextLine();
 		System.out.println("Notes: ");
 		bA.notes = input.nextLine();
-		input.nextLine();
+		//input.nextLine();
 		input.close();
 	}
 }

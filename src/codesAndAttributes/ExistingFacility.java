@@ -1,18 +1,18 @@
 package codesAndAttributes;
 import java.util.Scanner;
 
-public class ExistingFacility {
-	Scanner input = new Scanner(System.in);
+public class ExistingFacility extends BasicAttributes{
 	
-	private int gpsShot;
+	Scanner input = new Scanner(System.in);
+	BasicAttributes bA = new BasicAttributes();
+	
 	private String owner;
 	private double size;
 	private String crossingProp;
 	private String depthMethod;
 	private double depthInDecFeet;
 	private double clearanceInDecFeet;
-	private String notes;
-	
+		
 	// An array of the Depth Methods
 	private String[] depthMethodTypes = {"Open Cut","Locator","Exposed","Potholed","Pin Flag"};
 	
@@ -52,22 +52,10 @@ public class ExistingFacility {
 	public void setClearanceInDecFeet(double clearanceInDecFeet) {
 		this.clearanceInDecFeet = clearanceInDecFeet;
 	}
-	public String getNotes() {
-		return notes;
-	}
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
-	public int getGpsShot() {
-		return gpsShot;
-	}
-	public void setGpsShot(int gpsShot) {
-		this.gpsShot = gpsShot;
-	}	
 	
 	public void existingFacilityDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		this.gpsShot = input.nextInt();
+		bA.gpsShot= input.nextInt();
 		input.nextLine();		
 		System.out.println("Enter the owner of the Existing Facility: ");
 		this.owner = input.nextLine();
@@ -86,8 +74,8 @@ public class ExistingFacility {
 		System.out.print("Clearance in Decimal Feet: ");
 		this.clearanceInDecFeet = input.nextDouble();
 		input.nextLine();
-		System.out.print("Enter any Notes or None: ");
-		this.notes = input.nextLine();
+		System.out.print("Notes: ");
+		bA.notes= input.nextLine();
 		input.close();
 		}
 	public void displayDepthMethods(String[] x) {

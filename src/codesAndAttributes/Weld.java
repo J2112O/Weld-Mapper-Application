@@ -105,7 +105,7 @@ public class Weld extends BasicAttributes {
 		this.pipeLocation = input.nextLine();
 		System.out.println("Welder initialis: ");
 		this.welderInitials = input.nextLine();
-		System.out.print("Enter any Notes (None if no notes): ");
+		System.out.print("Notes: ");
 		bA.notes= input.nextLine();
 		input.close();
 	}

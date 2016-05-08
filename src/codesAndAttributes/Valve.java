@@ -4,16 +4,17 @@
 package codesAndAttributes;
 import java.util.Scanner;
 
-public class Valve {
+public class Valve extends BasicAttributes {
 	
 	Scanner input = new Scanner(System.in);
 	String[] valvePositions = {"Begin","Center","End","Other(See Notes)"};
 	
-	private int gpsShot;
+	// Creating an instance of BasicAttributes class
+	BasicAttributes bA = new BasicAttributes();
+	
 	private String position;
 	private String valveId;
-	private String notes;
-
+	
 	public void displayValvePositions(String[] x) {
 		for(int i = 0; i < x.length; i++) {
 			System.out.println(x[i]);
@@ -48,15 +49,15 @@ public class Valve {
 	
 	public void valveDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		this.gpsShot = input.nextInt();
+		bA.gpsShot = input.nextInt();
 		input.nextLine();
 		System.out.print("Enter the position of this locate: ");
 		displayValvePositions(valvePositions);
 		this.position = input.nextLine();
 		System.out.print("Enter the Valve ID: ");
 		this.valveId = input.nextLine();
-		System.out.println("Enter any notes: ");
-		this.notes = input.nextLine();
+		System.out.println("Notes: ");
+		bA.notes = input.nextLine();
 		input.close();
 				
 	}
