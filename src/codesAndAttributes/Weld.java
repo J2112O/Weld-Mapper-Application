@@ -7,11 +7,7 @@ import java.util.Scanner;
 public class Weld {
 	
 	Scanner input = new Scanner(System.in);
-	
-	// An array of the types of welds
-	private String[] attributeTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
-			"Transition","Existing","Repair"};
-	
+		
 	private int gpsShot;
 	private String weldType;
 	private String weldId;
