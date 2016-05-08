@@ -9,7 +9,7 @@ public class WeldMapperMain {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
 
-		Valve vlv = new Valve();
+		Pi pi = new Pi();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -29,7 +29,7 @@ public class WeldMapperMain {
         System.out.print("Enter the Code to collect data for: ");
         String codeChoice = input.nextLine();
         System.out.println(codeChoice);
-        vlv.valveDataCollect();
+        pi.piDataCollect();
         input.close();
 	}
 }

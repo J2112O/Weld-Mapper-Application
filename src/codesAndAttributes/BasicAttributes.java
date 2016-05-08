@@ -7,6 +7,8 @@ public class BasicAttributes {
 	// An array of the types of welds
 	protected String[] weldTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
 				"Transition","Existing","Repair"};
+	// An array of Pipe Weight types
+	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor"};
 	
 	protected int gpsShot;
 	protected double cover;
