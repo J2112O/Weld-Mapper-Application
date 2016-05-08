@@ -2,7 +2,7 @@
  * Listing out the code choices for data collection 
  */
 public class Codes {
-	private String[] codes = {"Bend(Sag or Overbend)","Bore Wall","Cad","Combo Bend","Existing-Facility",
+	private String[] codes = {"Bend(Sag or Overbend)","Bore Wall","Cad Weld","Combo Bend","Existing-Facility",
 			"Fence","Loose End","Natural Ground","Overhead Facility","PI(Sidebend)","Pipe-Top",
 			"PW(Pipe Weights)","Rockshield","Trenchbreaker","Underground Utility","Valve","Weld"}; 
 	
