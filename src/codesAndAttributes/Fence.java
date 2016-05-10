@@ -57,7 +57,7 @@ public class Fence extends BasicAttributes {
 		displayFenceTypes(fenceTypes);
 		System.out.print(": ");
 		this.type = input.nextLine();
-		System.out.print("Shot location (In-Line or Corner): ");
+		System.out.print("Shot location (Corner,Post,In Line,In Line(Meandering)): ");
 		this.shotLocation = input.nextLine();
 		System.out.print("Enter the height of the fence: ");
 		this.height = input.nextDouble();
