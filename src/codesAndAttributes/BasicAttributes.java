@@ -9,6 +9,8 @@ public class BasicAttributes {
 				"Transition","Existing","Repair"};
 	// An array of Pipe Weight types
 	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor"};
+	// An array of Trench Breaker types
+	protected String[] trenchbrkrTypes = {"Foam","Cement","Sand Bags","Other(See Notes)"};
 	
 	protected int gpsShot;
 	protected double cover;
