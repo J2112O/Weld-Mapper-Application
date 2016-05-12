@@ -11,6 +11,12 @@ public class BasicAttributes {
 	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor"};
 	// An array of Trench Breaker types
 	protected String[] trenchbrkrTypes = {"Foam","Cement","Sand Bags","Other(See Notes)"};
+	// An array of Underground Facility Locations
+	protected String[] locations = {"Ground Not Exposed","On Exposed Facility","Other(See Notes)"};
+	// An array of Underground Facility types
+	protected String[] utiliyType = {"Fiber Optic","Water","Electric","Telephone","TV Cable","Unknown"};
+	// An array of shot positions in relation to Underground Facilities
+	protected String[] positions = {"Above","Below","Other(See Notes)"};
 	
 	protected int gpsShot;
 	protected double cover;
