@@ -49,15 +49,15 @@ public class Valve extends BasicAttributes {
 	
 	public void valveDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the position of this locate: ");
 		displayValvePositions(valvePositions);
-		this.position = input.nextLine();
+		setPosition(input.nextLine());
 		System.out.print("Enter the Valve ID: ");
-		this.valveId = input.nextLine();
+		setValveId(input.nextLine());
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 				
 	}

@@ -11,10 +11,10 @@ public class PipeTop extends BasicAttributes {
 	
 	public void pipeTopDataCollect() {
 		System.out.println("Enter the GPS Shot for the Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

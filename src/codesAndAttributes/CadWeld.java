@@ -23,13 +23,13 @@ public class CadWeld extends BasicAttributes {
 	
 	public void cadWeldDataCollect() {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Wire Count for the Cad Weld: ");
 		this.wireCount = input.nextInt();
-		input.nextLine();
+		setWireCount(input.nextInt());
 		System.out.print("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

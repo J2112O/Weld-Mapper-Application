@@ -18,7 +18,7 @@ public class NaturalGround {
 	
 	public void naturalGroundDataCollect() {
 		System.out.println("Enter the GPS Point for the Shot: ");
-		this.naturalGround = input.nextInt();
+		setNaturalGround(input.nextInt());
 		input.nextLine();
 		input.close();
 	}

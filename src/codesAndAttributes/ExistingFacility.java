@@ -55,19 +55,19 @@ public class ExistingFacility extends BasicAttributes{
 	
 	public void existingFacilityDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot= input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();		
 		System.out.println("Enter the owner of the Existing Facility: ");
-		this.owner = input.nextLine();
+		setOwner(input.nextLine());
 		System.out.print("Enter the size (in inches) of the Existing Facility: ");
-		this.size = input.nextInt();
+		setSize(input.nextInt());
 		input.nextLine();
 		System.out.print("Crossing proposed route? (Yes or No) ");
-		this.crossingProp = input.nextLine();
+		setCrossingProp(input.nextLine());
 		System.out.print("Depth Method.. \n");
 		displayDepthMethods(depthMethodTypes);
 		System.out.print(": ");
-		this.depthMethod = input.nextLine();
+		setDepthMethod(input.nextLine());
 		System.out.print("Depth in Decimal Feet: ");
 		this.depthInDecFeet = input.nextDouble();
 		input.nextLine();

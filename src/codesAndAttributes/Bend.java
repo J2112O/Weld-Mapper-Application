@@ -37,22 +37,22 @@ public class Bend extends BasicAttributes {
 	public void bendDataCollect() {
 		
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Sag or Overbend? ");
-		this.kind = input.nextLine();
+		setKind(input.nextLine());
 		System.out.print("Enter the Type: \n");
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
-		this.type = input.nextLine();
+		setType(input.nextLine());
 		System.out.format("Enter the degree: ");
-		this.degree = input.nextDouble();
+		setDegree(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the Cover: ");
-		bA.cover= input.nextDouble();
+		bA.setCover(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the Natural Ground shot for cover: ");
-		bA.ngc = input.nextInt();
+		bA.setNgc(input.nextInt());
 		input.nextLine();
 		System.out.print("Notes: ");
 		bA.notes = input.nextLine();

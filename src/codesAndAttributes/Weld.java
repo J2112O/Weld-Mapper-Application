@@ -76,37 +76,37 @@ public class Weld extends BasicAttributes {
 	}
 	public void weldDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();		
 		System.out.println("Enter the Weld Type.. ");
 		displayCertainTypes(bA.weldTypes);
 		System.out.print(": ");
-		this.weldType = input.nextLine();
+		setWeldType(input.nextLine());
 		System.out.print("Enter the Weld ID (X-Ray Number): ");
-		this.weldId = input.nextLine();
+		setWeldId(input.nextLine());
 		System.out.print("Enter the Pipe (Name or ID) back: ");
-		this.pipeBack = input.nextLine();
+		setPipeBack(input.nextLine());
 		System.out.print("Enter the Pipe (Name or ID) ahead: ");
-		this.pipeAhead = input.nextLine();
+		setPipeAhead(input.nextLine());
 		System.out.print("Enter the Heat ahead: ");
-		this.heatAhead = input.nextLine();
+		setHeatAhead(input.nextLine());
 		System.out.print("Enter the Length ahead: ");
-		this.lengthAhead = input.nextDouble();
+		setLengthAhead(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the Natural Ground shot for cover: ");
-		bA.ngc = input.nextInt();
+		bA.setNgc(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Cover: ");
-		bA.cover= input.nextDouble();
+		bA.setCover(input.nextDouble());
 		input.nextLine();
 		System.out.print("Wall change? (Yes or No) ");
-		this.wallChange = input.nextLine();
+		setWallChange(input.nextLine());
 		System.out.print("Pipe in ditch (Yes or No): ");
-		this.pipeLocation = input.nextLine();
+		setPipeLocation(input.nextLine());
 		System.out.println("Welder initialis: ");
-		this.welderInitials = input.nextLine();
+		setWelderInitials(input.nextLine());
 		System.out.print("Notes: ");
-		bA.notes= input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

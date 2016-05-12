@@ -36,20 +36,20 @@ public class PipeWeights extends BasicAttributes {
 	
 	public void pipeWeightDataCollect() {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Type of Pipe Weight: \n");
 		bA.displayCertainTypes(pipeWeights);
 		System.out.print(": ");
-		this.type = input.nextLine();
+		setType(input.nextLine());
 		System.out.print("Enter the Position of the Pipe Weight ");
 		System.out.print("(Begin,End or Individual): ");
-		this.position = input.nextLine();
+		setPosition(input.nextLine());
 		System.out.print("Enter the Pipe Weight Count: ");
-		this.count = input.nextInt();
+		setCount(input.nextInt());
 		input.nextLine();
 		System.out.print("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 	

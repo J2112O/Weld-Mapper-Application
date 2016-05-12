@@ -47,15 +47,15 @@ public class UndergroundFacility extends BasicAttributes {
 	
 	public void undergroundFacilityDataCollect() {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("Enter the Shot Location: \n");
 		bA.displayCertainTypes(locations);
 		System.out.print(": ");
-		this.shotLocation = input.nextLine();
+		setShotLocation(input.nextLine());
 		System.out.println("Enter the Underground Facility Type: \n");
 		bA.displayCertainTypes(utiliyType);
 		System.out.print(": ");
-		this.utilityType = input.nextLine();
+		setUtilityType(input.nextLine());
 	}
 }

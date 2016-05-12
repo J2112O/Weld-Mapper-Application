@@ -33,18 +33,18 @@ public class OverheadFacility extends BasicAttributes {
 	
 	public void overheadFacilityDataCollect() {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("Enter the wire count for the Overhead Facility: ");
-		this.wireCount = input.nextInt();
+		setWireCount(input.nextInt());
 		input.nextLine();
 		System.out.println("Height: ");
-		this.height = input.nextDouble();
+		setHeight(input.nextDouble());
 		input.nextLine();
 		System.out.println("Transmission line? (Yes or No): ");
-		this.type = input.nextLine();
+		setType(input.nextLine());
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

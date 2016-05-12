@@ -36,25 +36,25 @@ public class Pi extends BasicAttributes {
 	
 	public void piDataCollect() {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bendTypes);
 		System.out.print(": ");
-		this.bendType = input.nextLine();
+		setBendType(input.nextLine());
 		System.out.print("Enter the Direction, SBLT or SBRT: ");
-		this.direction = input.nextLine();
+		setDirection(input.nextLine());
 		System.out.print("Enter the Degree: ");
-		this.degree = input.nextDouble();
+		setDegree(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the Natural Ground for Cover Shot: ");
-		bA.ngc = input.nextInt();
+		bA.setNgc(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Cover: ");
-		bA.cover = input.nextDouble();
+		bA.setCover(input.nextDouble());
 		input.nextLine();
 		System.out.print("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 

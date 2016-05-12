@@ -13,10 +13,10 @@ public class BoreWall extends BasicAttributes {
 	
 	public void boreWallDataCollect() {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

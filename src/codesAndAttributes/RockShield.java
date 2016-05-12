@@ -21,12 +21,12 @@ public class RockShield extends BasicAttributes {
 	
 	public void rockShieldDataCollect() {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("Position (Begin or End): ");
-		this.position = input.nextLine();
+		setPosition(input.nextLine());
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

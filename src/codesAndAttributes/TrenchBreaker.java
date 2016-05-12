@@ -21,14 +21,14 @@ public class TrenchBreaker extends BasicAttributes {
 	
 	public void trenchBreakerDataCollect() {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("Enter the Type: \n");
 		bA.displayCertainTypes(trenchbrkrTypes);
 		System.out.println(": ");
-		this.type = input.nextLine();
+		setType(input.nextLine());
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 	

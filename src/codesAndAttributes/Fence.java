@@ -51,22 +51,22 @@ public class Fence extends BasicAttributes {
 	}
 	public void fenceDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot= input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
 		System.out.print(": ");
-		this.type = input.nextLine();
+		setType(input.nextLine());
 		System.out.print("Shot location (Corner,Post,In Line,In Line(Meandering)): ");
-		this.shotLocation = input.nextLine();
+		setShotLocation(input.nextLine());
 		System.out.print("Enter the height of the fence: ");
-		this.height = input.nextDouble();
+		setHeight(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the strand count: ");
-		this.strandCount = input.nextInt();
+		setStrandCount(input.nextInt());
 		input.nextLine();
 		System.out.print("Notes: ");
-		bA.notes= input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 				
 	}

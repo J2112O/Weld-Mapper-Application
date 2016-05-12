@@ -20,12 +20,12 @@ public class LooseEnd extends BasicAttributes {
 	}
 	public void looseEndDataCollect() {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.println("On skids (Yes or No): ");
-		this.position = input.nextLine();
+		setPosition(input.nextLine());
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		input.close();
 	}
 }

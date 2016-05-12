@@ -57,31 +57,31 @@ public class ComboBend extends BasicAttributes {
 
 	public void comboDataCollect() {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.gpsShot = input.nextInt();
+		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
-		this.bendType = input.nextLine();
+		setBendType(input.nextLine());
 		System.out.print("Direction 1: \n");
 		displayBendDirections(bendDirections);
 		System.out.println(": ");
-		this.direction1 = input.nextLine();
+		setDirection1(input.nextLine());
 		System.out.print("Degree 1: ");
-		this.degree1 = input.nextDouble();
+		setDegree1(input.nextDouble());
 		input.nextLine();
 		System.out.print("Direction 2: \n");
 		displayBendDirections(bendDirections);
 		System.out.print(": ");
-		this.direction2 = input.nextLine();
+		setDirection2(input.nextLine());
 		System.out.print("Degree 2: ");
-		this.degree2 = input.nextDouble();
+		setDegree2(input.nextDouble());
 		input.nextLine();
 		System.out.print("Enter the Cover: ");
-		bA.cover = input.nextDouble();
+		bA.setCover(input.nextDouble());
 		input.nextLine();
 		System.out.println("Notes: ");
-		bA.notes = input.nextLine();
+		bA.setNotes(input.nextLine());
 		//input.nextLine();
 		input.close();
 	}

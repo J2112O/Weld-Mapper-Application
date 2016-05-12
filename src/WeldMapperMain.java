@@ -8,8 +8,7 @@ public class WeldMapperMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
-
-		TrenchBreaker tb = new TrenchBreaker(); 
+		Bend bend = new Bend();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -29,7 +28,7 @@ public class WeldMapperMain {
         System.out.print("Enter the Code to collect data for: ");
         String codeChoice = input.nextLine();
         System.out.println(codeChoice);
-        tb.trenchBreakerDataCollect();
+        bend.bendDataCollect();
         input.close();
 	}
 }
