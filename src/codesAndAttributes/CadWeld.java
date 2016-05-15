@@ -26,8 +26,8 @@ public class CadWeld extends BasicAttributes {
 		bA.setGpsShot(input.nextInt());
 		input.nextLine();
 		System.out.print("Enter the Wire Count for the Cad Weld: ");
-		this.wireCount = input.nextInt();
 		setWireCount(input.nextInt());
+		input.nextLine();
 		System.out.print("Notes: ");
 		bA.setNotes(input.nextLine());
 		input.close();

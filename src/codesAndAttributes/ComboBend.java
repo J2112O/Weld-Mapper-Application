@@ -77,6 +77,9 @@ public class ComboBend extends BasicAttributes {
 		System.out.print("Degree 2: ");
 		setDegree2(input.nextDouble());
 		input.nextLine();
+		System.out.print("Enter the Natural Ground for Cover Shot: ");
+		bA.setNgc(input.nextInt());
+		input.nextLine();
 		System.out.print("Enter the Cover: ");
 		bA.setCover(input.nextDouble());
 		input.nextLine();

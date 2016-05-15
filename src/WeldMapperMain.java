@@ -8,7 +8,7 @@ public class WeldMapperMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Date date = new Date();
-		Bend bend = new Bend();
+		ChoosingCodes cc = new ChoosingCodes();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
@@ -22,13 +22,14 @@ public class WeldMapperMain {
         FlowLine gettngDirection = new FlowLine();
         gettngDirection.CaptureDirection();
         System.out.println(date);
-        // Listing out the Code choices for data collection with the Codes class
+        cc.dataCollecting();
+        /* Listing out the Code choices for data collection with the Codes class
         Codes codeChoices = new Codes();
         codeChoices.displayCodes();
         System.out.print("Enter the Code to collect data for: ");
         String codeChoice = input.nextLine();
-        System.out.println(codeChoice);
-        bend.bendDataCollect();
+        System.out.println(codeChoice); */
+
         input.close();
 	}
 }
