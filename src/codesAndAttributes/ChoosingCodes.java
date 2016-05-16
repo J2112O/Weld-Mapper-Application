@@ -2,12 +2,14 @@
  * Using this class to capture what code the user wants to collect data for 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
 public class ChoosingCodes {
 	
 	// Creating an instance of Scanner
 	Scanner scan = new Scanner(System.in);
+	// Using this string to control the while loop
 	// Using this string to capture user input for the code to collect data for
 	private String codeChoice;
 	// An array of the codes to choose from to collect data for
@@ -38,49 +40,56 @@ public class ChoosingCodes {
         	System.out.println(codes[i]);
         }
     }
-	public void dataCollecting() {
-		System.out.print("Enter the Code to collect data for: \n");
-		displayCodes();
-		System.out.print(": ");
-		codeChoice = scan.nextLine();
-		codeChoice = codeChoice.toUpperCase();
-		System.out.println(codeChoice);
-		if (codeChoice.equals("BEND")) {
-			bend.bendDataCollect();
-		} else if (codeChoice.equals("BORE WALL")) {
-			bW.boreWallDataCollect();
-		} else if (codeChoice.equals("CAD WELD")) {
-			cad.cadWeldDataCollect();
-		} else if (codeChoice.equals("COMBO BEND")) {
-			cmbo.comboDataCollect();
-		} else if (codeChoice.equals("EXISTING FACILITY")) {
-			eF.existingFacilityDataCollect();
-		} else if (codeChoice.equals("FENCE")) {
-			fnc.fenceDataCollect();
-		} else if (codeChoice.equals("LOOSE END")) {
-			le.looseEndDataCollect();
-		} else if (codeChoice.equals("NATURAL GROUND")) {
-			ng.naturalGroundDataCollect();
-		} else if (codeChoice.equals("OVERHEAD FACILITY")) {
-			ohp.overheadFacilityDataCollect();
-		} else if (codeChoice.equals("PI")) {
-			pi.piDataCollect();
-		} else if (codeChoice.equals("PIPE TOP")) {
-			pTop.pipeTopDataCollect();
-		} else if (codeChoice.equals("PW")) {
-			pw.pipeWeightDataCollect();
-		} else if (codeChoice.equals("ROCKSHIELD")) {
-			rShield.rockShieldDataCollect();
-		} else if (codeChoice.equals("TRENCHBREAKER")) {
-			tb.trenchBreakerDataCollect();
-		} else if (codeChoice.equals("UNDERGROUND FACILITY")) {
-			uF.undergroundFacilityDataCollect();
-		} else if (codeChoice.equals("VALVE")) {
-			vlv.valveDataCollect();
-		} else if (codeChoice.equals("WELD")) {
-			weld.weldDataCollect();
-		} else {
-			System.out.println("That choice is not a valid entry, choose again: ");
+	
+	public void dataCollectingChoices() throws IOException {
+		/*System.out.print("Do you wish to collect Data? \n");
+		proceed = scan.nextLine();
+		proceed = proceed.toUpperCase();
+		scan.nextLine();
+		while (proceed.equals("YES")) {*/
+			System.out.print("Enter the Code to collect data for: \n");
+			displayCodes();
+			System.out.print(": ");
+			codeChoice = scan.nextLine();
+			//scan.hasNextLine();
+			codeChoice = codeChoice.toUpperCase();
+			System.out.println(codeChoice);
+			if (codeChoice.equals("BEND")) {
+				bend.bendDataCollect();
+			} else if (codeChoice.equals("BORE WALL")) {
+				bW.boreWallDataCollect();
+			} else if (codeChoice.equals("CAD WELD")) {
+				cad.cadWeldDataCollect();
+			} else if (codeChoice.equals("COMBO BEND")) {
+				cmbo.comboDataCollect();
+			} else if (codeChoice.equals("EXISTING FACILITY")) {
+				eF.existingFacilityDataCollect();
+			} else if (codeChoice.equals("FENCE")) {
+				fnc.fenceDataCollect();
+			} else if (codeChoice.equals("LOOSE END")) {
+				le.looseEndDataCollect();
+			} else if (codeChoice.equals("NATURAL GROUND")) {
+				ng.naturalGroundDataCollect();
+			} else if (codeChoice.equals("OVERHEAD FACILITY")) {
+				ohp.overheadFacilityDataCollect();
+			} else if (codeChoice.equals("PI")) {
+				pi.piDataCollect();
+			} else if (codeChoice.equals("PIPE TOP")) {
+				pTop.pipeTopDataCollect();
+			} else if (codeChoice.equals("PW")) {
+				pw.pipeWeightDataCollect();
+			} else if (codeChoice.equals("ROCKSHIELD")) {
+				rShield.rockShieldDataCollect();
+			} else if (codeChoice.equals("TRENCHBREAKER")) {
+				tb.trenchBreakerDataCollect();
+			} else if (codeChoice.equals("UNDERGROUND FACILITY")) {
+				uF.undergroundFacilityDataCollect();
+			} else if (codeChoice.equals("VALVE")) {
+				vlv.valveDataCollect();
+			} else if (codeChoice.equals("WELD")) {
+				weld.weldDataCollect();
+			} else {
+				System.out.println("That choice is not a valid entry, choose again: ");
+			}
 		}
-	}
-}
+	}	

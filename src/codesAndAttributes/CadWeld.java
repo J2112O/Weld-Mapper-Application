@@ -1,14 +1,15 @@
 /*
  * This class captures Cad Weld Data 
  */
-
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class CadWeld extends BasicAttributes {
-
-	Scanner input = new Scanner(System.in);
 	
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	// Creating an instance of the Basic Attributes Class
 	BasicAttributes bA = new BasicAttributes();
 	
@@ -21,15 +22,12 @@ public class CadWeld extends BasicAttributes {
 		this.wireCount = wireCount;
 	}
 	
-	public void cadWeldDataCollect() {
+	public void cadWeldDataCollect() throws IOException {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Wire Count for the Cad Weld: ");
-		setWireCount(input.nextInt());
-		input.nextLine();
+		setWireCount(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
 	}
 }

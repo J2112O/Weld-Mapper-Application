@@ -1,18 +1,20 @@
 
 import java.util.Date;
-import java.util.Scanner;
+import java.io.*;
 import codesAndAttributes.*;
 
 public class WeldMapperMain {
 
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new
+				InputStreamReader(System.in));
+
 		Date date = new Date();
 		ChoosingCodes cc = new ChoosingCodes();
 		
 		System.out.print("Enter the location of work ");
 		System.out.print("(Tract, Road Crossing or Description of Area): ");
-		String workLocation = input.nextLine();
+		String workLocation = br.readLine();
 		
 		// Printing everything to upper-case with CapitalizeAllWords
         System.out.println(workLocation.toUpperCase());
@@ -22,14 +24,13 @@ public class WeldMapperMain {
         FlowLine gettngDirection = new FlowLine();
         gettngDirection.CaptureDirection();
         System.out.println(date);
-        cc.dataCollecting();
-        /* Listing out the Code choices for data collection with the Codes class
-        Codes codeChoices = new Codes();
-        codeChoices.displayCodes();
-        System.out.print("Enter the Code to collect data for: ");
-        String codeChoice = input.nextLine();
-        System.out.println(codeChoice); */
+        
+        System.out.print("Do you wish to collect Data? ");
+        String proceed = br.readLine();
+        proceed = proceed.toUpperCase();
+        do {
+        cc.dataCollectingChoices();
+        } while (proceed.equals("YES"));
 
-        input.close();
 	}
 }

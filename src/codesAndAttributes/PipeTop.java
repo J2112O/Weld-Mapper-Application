@@ -2,19 +2,18 @@
  * This class essentially captures a top of pipe shot  
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 public class PipeTop extends BasicAttributes {
 
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	//Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
 	
-	public void pipeTopDataCollect() {
+	public void pipeTopDataCollect() throws NumberFormatException, IOException {
 		System.out.println("Enter the GPS Shot for the Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
 	}
 }

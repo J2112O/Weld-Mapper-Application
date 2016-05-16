@@ -2,11 +2,15 @@
  *	This class is used for two kinds of Bends. Sags and Overbends both. 
  **/
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class Bend extends BasicAttributes {
+	BufferedReader br = new BufferedReader(new
+				InputStreamReader(System.in));
 	
-	Scanner input = new Scanner(System.in);
 	
 	// Creating a instance of the Basic Attributes Class here.
 	BasicAttributes bA = new BasicAttributes();
@@ -34,30 +38,25 @@ public class Bend extends BasicAttributes {
 		this.kind = kind;
 	}
 	
-	public void bendDataCollect() {
+	public void bendDataCollect() throws IOException {
 		
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Sag or Overbend? ");
-		setKind(input.nextLine());
+		setKind(br.readLine());
 		System.out.print("Enter the Type: \n");
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
-		setType(input.nextLine());
+		setType(br.readLine());
 		System.out.format("Enter the degree: ");
-		setDegree(input.nextDouble());
-		input.nextLine();
-		System.out.print("Enter the Cover: ");
-		bA.setCover(input.nextDouble());
-		input.nextLine();
+		setDegree(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the Natural Ground shot for cover: ");
-		bA.setNgc(input.nextInt());
-		input.nextLine();
+		bA.setNgc(Integer.parseInt(br.readLine()));
+		System.out.print("Enter the Cover: ");
+		bA.setCover(Double.parseDouble(br.readLine()));
 		System.out.print("Notes: ");
-		bA.notes = input.nextLine();
-		
-		input.close();
+		bA.notes = br.readLine();
+
 	}
 	
 }

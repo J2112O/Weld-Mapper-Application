@@ -2,11 +2,12 @@
  *	This package captures all the information for each weld 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 
 public class Weld extends BasicAttributes {
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	// Creating a new instance of the class Basic Attributes below.
 	BasicAttributes bA = new BasicAttributes();
 
@@ -74,39 +75,35 @@ public class Weld extends BasicAttributes {
 	public void setWelderInitials(String welderInitials) {
 		this.welderInitials = welderInitials;
 	}
-	public void weldDataCollect() {
+	public void weldDataCollect() throws IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();		
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the Weld Type.. ");
 		displayCertainTypes(bA.weldTypes);
 		System.out.print(": ");
-		setWeldType(input.nextLine());
+		setWeldType(br.readLine());
 		System.out.print("Enter the Weld ID (X-Ray Number): ");
-		setWeldId(input.nextLine());
+		setWeldId(br.readLine());
 		System.out.print("Enter the Pipe (Name or ID) back: ");
-		setPipeBack(input.nextLine());
+		setPipeBack(br.readLine());
 		System.out.print("Enter the Pipe (Name or ID) ahead: ");
-		setPipeAhead(input.nextLine());
+		setPipeAhead(br.readLine());
 		System.out.print("Enter the Heat ahead: ");
-		setHeatAhead(input.nextLine());
+		setHeatAhead(br.readLine());
 		System.out.print("Enter the Length ahead: ");
-		setLengthAhead(input.nextDouble());
-		input.nextLine();
+		setLengthAhead(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the Natural Ground shot for cover: ");
-		bA.setNgc(input.nextInt());
-		input.nextLine();
+		bA.setNgc(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Cover: ");
-		bA.setCover(input.nextDouble());
-		input.nextLine();
+		bA.setCover(Double.parseDouble(br.readLine()));
 		System.out.print("Wall change? (Yes or No) ");
-		setWallChange(input.nextLine());
+		setWallChange(br.readLine());
 		System.out.print("Pipe in ditch (Yes or No): ");
-		setPipeLocation(input.nextLine());
+		setPipeLocation(br.readLine());
 		System.out.println("Welder initialis: ");
-		setWelderInitials(input.nextLine());
+		setWelderInitials(br.readLine());
 		System.out.print("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
+
 	}
 }

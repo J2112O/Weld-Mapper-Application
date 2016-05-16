@@ -2,11 +2,12 @@
  * This class captures data for any Pipe Weights 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 
 public class PipeWeights extends BasicAttributes {
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in)); 
 	
 	// Creating an instance of the BasicAttributes Class
 	BasicAttributes bA = new BasicAttributes();
@@ -34,23 +35,20 @@ public class PipeWeights extends BasicAttributes {
 		this.count = count;
 	}
 	
-	public void pipeWeightDataCollect() {
+	public void pipeWeightDataCollect() throws NumberFormatException, IOException {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Type of Pipe Weight: \n");
 		bA.displayCertainTypes(pipeWeights);
 		System.out.print(": ");
-		setType(input.nextLine());
+		setType(br.readLine());
 		System.out.print("Enter the Position of the Pipe Weight ");
 		System.out.print("(Begin,End or Individual): ");
-		setPosition(input.nextLine());
+		setPosition(br.readLine());
 		System.out.print("Enter the Pipe Weight Count: ");
-		setCount(input.nextInt());
-		input.nextLine();
+		setCount(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
+
 	}
-	
 }

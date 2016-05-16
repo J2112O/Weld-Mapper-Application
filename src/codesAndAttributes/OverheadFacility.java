@@ -2,9 +2,11 @@
  * This class captures Overhead Power Lines 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 public class OverheadFacility extends BasicAttributes {
-	Scanner input = new Scanner(System.in);
+	
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	//Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
 	
@@ -31,20 +33,17 @@ public class OverheadFacility extends BasicAttributes {
 		this.type = type;
 	}
 	
-	public void overheadFacilityDataCollect() {
+	public void overheadFacilityDataCollect() throws IOException {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the wire count for the Overhead Facility: ");
-		setWireCount(input.nextInt());
-		input.nextLine();
+		setWireCount(Integer.parseInt(br.readLine()));
 		System.out.println("Height: ");
-		setHeight(input.nextDouble());
-		input.nextLine();
+		setHeight(Double.parseDouble(br.readLine()));
 		System.out.println("Transmission line? (Yes or No): ");
-		setType(input.nextLine());
+		setType(br.readLine());
 		System.out.println("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
+
 	}
 }

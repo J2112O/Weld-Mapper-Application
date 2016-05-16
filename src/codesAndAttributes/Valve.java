@@ -2,11 +2,12 @@
  * This class captures a small amount of Valve data. 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 
 public class Valve extends BasicAttributes {
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	String[] valvePositions = {"Begin","Center","End","Other(See Notes)"};
 	
 	// Creating an instance of BasicAttributes class
@@ -47,18 +48,16 @@ public class Valve extends BasicAttributes {
 		this.gpsShot = gpsShot;
 	}
 	
-	public void valveDataCollect() {
+	public void valveDataCollect() throws IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the position of this locate: ");
 		displayValvePositions(valvePositions);
-		setPosition(input.nextLine());
+		setPosition(br.readLine());
 		System.out.print("Enter the Valve ID: ");
-		setValveId(input.nextLine());
+		setValveId(br.readLine());
 		System.out.println("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
-				
+		bA.setNotes(br.readLine());
+		
 	}
 }

@@ -1,9 +1,11 @@
 package codesAndAttributes;
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class ExistingFacility extends BasicAttributes{
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	BasicAttributes bA = new BasicAttributes();
 	
 	private String owner;
@@ -53,30 +55,26 @@ public class ExistingFacility extends BasicAttributes{
 		this.clearanceInDecFeet = clearanceInDecFeet;
 	}
 	
-	public void existingFacilityDataCollect() {
+	public void existingFacilityDataCollect() throws IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();		
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the owner of the Existing Facility: ");
-		setOwner(input.nextLine());
+		setOwner(br.readLine());
 		System.out.print("Enter the size (in inches) of the Existing Facility: ");
-		setSize(input.nextInt());
-		input.nextLine();
+		setSize(Integer.parseInt(br.readLine()));
 		System.out.print("Crossing proposed route? (Yes or No) ");
-		setCrossingProp(input.nextLine());
+		setCrossingProp(br.readLine());
 		System.out.print("Enter the Depth Method: \n");
 		displayDepthMethods(depthMethodTypes);
 		System.out.print(": ");
-		setDepthMethod(input.nextLine());
+		setDepthMethod(br.readLine());
 		System.out.print("Depth in Decimal Feet: ");
-		this.depthInDecFeet = input.nextDouble();
-		input.nextLine();
+		setDepthInDecFeet(Double.parseDouble(br.readLine()));
 		System.out.print("Clearance in Decimal Feet: ");
-		this.clearanceInDecFeet = input.nextDouble();
-		input.nextLine();
+		setClearanceInDecFeet(Double.parseDouble(br.readLine()));
 		System.out.print("Notes: ");
-		bA.notes= input.nextLine();
-		input.close();
+		bA.setNotes(br.readLine());
+	
 		}
 	public void displayDepthMethods(String[] x) {
 		for(int i = 0; i < x.length; i++) {

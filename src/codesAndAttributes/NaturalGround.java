@@ -2,11 +2,12 @@
  * Captures the Natural Ground Shot 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 
 public class NaturalGround extends BasicAttributes {
 
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	// Creating an instance of the Basic Attributes class
 	BasicAttributes bA = new BasicAttributes();
 	private int naturalGround;
@@ -18,13 +19,11 @@ public class NaturalGround extends BasicAttributes {
 		this.naturalGround = naturalGround;
 	}
 	
-	public void naturalGroundDataCollect() {
+	public void naturalGroundDataCollect() throws IOException {
 		System.out.println("Enter the GPS Point for the Shot: ");
-		setNaturalGround(input.nextInt());
-		input.nextLine();
+		setNaturalGround(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
-		input.close();
+		bA.setNotes(br.readLine());
+		
 	}
 }

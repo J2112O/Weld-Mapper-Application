@@ -2,10 +2,11 @@
  * This class captures all Underground Facility data 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 public class UndergroundFacility extends BasicAttributes {
 
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	//Creating an instance of the Basic Attributes Class
 	BasicAttributes bA = new BasicAttributes();
 		
@@ -45,17 +46,16 @@ public class UndergroundFacility extends BasicAttributes {
 		this.pipelinePosition = pipelinePosition;
 	}
 	
-	public void undergroundFacilityDataCollect() {
+	public void undergroundFacilityDataCollect() throws IOException {
 		System.out.println("Enter the GPS Shot for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the Shot Location: \n");
 		bA.displayCertainTypes(locations);
 		System.out.print(": ");
-		setShotLocation(input.nextLine());
+		setShotLocation(br.readLine());
 		System.out.println("Enter the Underground Facility Type: \n");
 		bA.displayCertainTypes(utiliyType);
 		System.out.print(": ");
-		setUtilityType(input.nextLine());
+		setUtilityType(br.readLine());
 	}
 }

@@ -1,12 +1,14 @@
 /*
  * This class captures existing Fence crossings. 
  */
-
 package codesAndAttributes;
-import java.util.Scanner;
+
+import java.io.*;
+
 public class Fence extends BasicAttributes {
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	
 	// Creating and instance of BasicAttributes Class
 	BasicAttributes bA = new BasicAttributes();
@@ -49,25 +51,21 @@ public class Fence extends BasicAttributes {
 			System.out.println(x[i]);
 		}
 	}
-	public void fenceDataCollect() {
+	public void fenceDataCollect() throws NumberFormatException, IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
 		System.out.print(": ");
-		setType(input.nextLine());
+		setType(br.readLine());
 		System.out.print("Shot location (Corner,Post,In Line,In Line(Meandering)): ");
-		setShotLocation(input.nextLine());
+		setShotLocation(br.readLine());
 		System.out.print("Enter the height of the fence: ");
-		setHeight(input.nextDouble());
-		input.nextLine();
+		setHeight(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the strand count: ");
-		setStrandCount(input.nextInt());
-		input.nextLine();
+		setStrandCount(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
 				
 	}
 }

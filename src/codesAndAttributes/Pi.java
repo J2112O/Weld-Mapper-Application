@@ -2,11 +2,12 @@
  * This class deals with PI's (Side-bends) 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.*;
 
 public class Pi extends BasicAttributes {
 
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	
 	// Creating an instance of the BasicAttributes Class
 	BasicAttributes bA = new BasicAttributes();
@@ -34,28 +35,23 @@ public class Pi extends BasicAttributes {
 		this.bendType = bendType;
 	}
 	
-	public void piDataCollect() {
+	public void piDataCollect() throws NumberFormatException, IOException {
 		System.out.print("Enter the GPS Shot for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bendTypes);
 		System.out.print(": ");
-		setBendType(input.nextLine());
+		setBendType(br.readLine());
 		System.out.print("Enter the Direction, SBLT or SBRT: ");
-		setDirection(input.nextLine());
+		setDirection(br.readLine());
 		System.out.print("Enter the Degree: ");
-		setDegree(input.nextDouble());
-		input.nextLine();
+		setDegree(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the Natural Ground for Cover Shot: ");
-		bA.setNgc(input.nextInt());
-		input.nextLine();
+		bA.setNgc(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Cover: ");
-		bA.setCover(input.nextDouble());
-		input.nextLine();
+		bA.setCover(Double.parseDouble(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setNotes(input.nextLine());
-		input.close();
+		bA.setNotes(br.readLine());
 	}
 
 }

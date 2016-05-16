@@ -2,11 +2,14 @@
  * This class captures the Combination bend. 
  */
 package codesAndAttributes;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class ComboBend extends BasicAttributes {
 	
-	Scanner input = new Scanner(System.in);
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	
 	// Making a new instance of the BasicAttributes class
 	BasicAttributes bA = new BasicAttributes();
@@ -55,37 +58,31 @@ public class ComboBend extends BasicAttributes {
 		this.degree2 = degree2;
 	}
 
-	public void comboDataCollect() {
+	public void comboDataCollect() throws IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
-		bA.setGpsShot(input.nextInt());
-		input.nextLine();
+		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
-		setBendType(input.nextLine());
+		setBendType(br.readLine());
 		System.out.print("Direction 1: \n");
 		displayBendDirections(bendDirections);
 		System.out.println(": ");
-		setDirection1(input.nextLine());
+		setDirection1(br.readLine());
 		System.out.print("Degree 1: ");
-		setDegree1(input.nextDouble());
-		input.nextLine();
+		setDegree1(Double.parseDouble(br.readLine()));
 		System.out.print("Direction 2: \n");
 		displayBendDirections(bendDirections);
 		System.out.print(": ");
-		setDirection2(input.nextLine());
+		setDirection2(br.readLine());
 		System.out.print("Degree 2: ");
-		setDegree2(input.nextDouble());
-		input.nextLine();
+		setDegree2(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the Natural Ground for Cover Shot: ");
-		bA.setNgc(input.nextInt());
-		input.nextLine();
+		bA.setNgc(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Cover: ");
-		bA.setCover(input.nextDouble());
-		input.nextLine();
+		bA.setCover(Double.parseDouble(br.readLine()));
 		System.out.println("Notes: ");
-		bA.setNotes(input.nextLine());
-		//input.nextLine();
-		input.close();
+		bA.setNotes(br.readLine());
+	
 	}
 }
