@@ -3,13 +3,13 @@
  */
 package codesAndAttributes;
 import java.io.IOException;
-import java.util.*;
+import java.io.*;
 
 public class ChoosingCodes {
 	
-	// Creating an instance of Scanner
-	Scanner scan = new Scanner(System.in);
-	// Using this string to control the while loop
+	// Creating an instance of Buffer Reader
+	BufferedReader br = new BufferedReader(new
+			InputStreamReader(System.in));
 	// Using this string to capture user input for the code to collect data for
 	private String codeChoice;
 	// An array of the codes to choose from to collect data for
@@ -42,51 +42,45 @@ public class ChoosingCodes {
     }
 	
 	public void dataCollectingChoices() throws IOException {
-		/*System.out.print("Do you wish to collect Data? \n");
-		proceed = scan.nextLine();
-		proceed = proceed.toUpperCase();
-		scan.nextLine();
-		while (proceed.equals("YES")) {*/
+			// Getting the code choice from the user here..
 			System.out.print("Enter the Code to collect data for: \n");
 			displayCodes();
 			System.out.print(": ");
-			codeChoice = scan.nextLine();
-			//scan.hasNextLine();
-			codeChoice = codeChoice.toUpperCase();
-			System.out.println(codeChoice);
-			if (codeChoice.equals("BEND")) {
+			codeChoice = br.readLine();
+			// Calling instances of the requested available codes
+			if (codeChoice.equalsIgnoreCase("bend")) {
 				bend.bendDataCollect();
-			} else if (codeChoice.equals("BORE WALL")) {
+			} else if (codeChoice.equalsIgnoreCase("bore wall")) {
 				bW.boreWallDataCollect();
-			} else if (codeChoice.equals("CAD WELD")) {
+			} else if (codeChoice.equalsIgnoreCase("cad weld")) {
 				cad.cadWeldDataCollect();
-			} else if (codeChoice.equals("COMBO BEND")) {
+			} else if (codeChoice.equalsIgnoreCase("combo bend")) {
 				cmbo.comboDataCollect();
-			} else if (codeChoice.equals("EXISTING FACILITY")) {
+			} else if (codeChoice.equalsIgnoreCase("existing facility")) {
 				eF.existingFacilityDataCollect();
-			} else if (codeChoice.equals("FENCE")) {
+			} else if (codeChoice.equalsIgnoreCase("fence")) {
 				fnc.fenceDataCollect();
-			} else if (codeChoice.equals("LOOSE END")) {
+			} else if (codeChoice.equalsIgnoreCase("loose end")) {
 				le.looseEndDataCollect();
-			} else if (codeChoice.equals("NATURAL GROUND")) {
+			} else if (codeChoice.equalsIgnoreCase("natural ground")) {
 				ng.naturalGroundDataCollect();
-			} else if (codeChoice.equals("OVERHEAD FACILITY")) {
+			} else if (codeChoice.equalsIgnoreCase("overhead facility")) {
 				ohp.overheadFacilityDataCollect();
-			} else if (codeChoice.equals("PI")) {
+			} else if (codeChoice.equalsIgnoreCase("pi")) {
 				pi.piDataCollect();
-			} else if (codeChoice.equals("PIPE TOP")) {
+			} else if (codeChoice.equalsIgnoreCase("pipe top")) {
 				pTop.pipeTopDataCollect();
-			} else if (codeChoice.equals("PW")) {
+			} else if (codeChoice.equalsIgnoreCase("pw")) {
 				pw.pipeWeightDataCollect();
-			} else if (codeChoice.equals("ROCKSHIELD")) {
+			} else if (codeChoice.equalsIgnoreCase("rockshield")) {
 				rShield.rockShieldDataCollect();
-			} else if (codeChoice.equals("TRENCHBREAKER")) {
+			} else if (codeChoice.equalsIgnoreCase("trenchbreaker")) {
 				tb.trenchBreakerDataCollect();
-			} else if (codeChoice.equals("UNDERGROUND FACILITY")) {
+			} else if (codeChoice.equalsIgnoreCase("underground facility")) {
 				uF.undergroundFacilityDataCollect();
-			} else if (codeChoice.equals("VALVE")) {
+			} else if (codeChoice.equalsIgnoreCase("valve")) {
 				vlv.valveDataCollect();
-			} else if (codeChoice.equals("WELD")) {
+			} else if (codeChoice.equalsIgnoreCase("weld")) {
 				weld.weldDataCollect();
 			} else {
 				System.out.println("That choice is not a valid entry, choose again: ");

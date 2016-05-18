@@ -25,12 +25,14 @@ public class WeldMapperMain {
         gettngDirection.CaptureDirection();
         System.out.println(date);
         
-        System.out.print("Do you wish to collect Data? ");
+        System.out.println("Do you wish to collect Data? ");
         String proceed = br.readLine();
-        proceed = proceed.toUpperCase();
-        do {
+        //proceed = proceed.toUpperCase();
+        while (proceed.equalsIgnoreCase("yes")) {
         cc.dataCollectingChoices();
-        } while (proceed.equals("YES"));
-
+        System.out.println("Do you wish to collect Data? ");
+        proceed = br.readLine();
+        } 
+        System.out.println("Thanks for using Weld Mapper.");
 	}
 }
