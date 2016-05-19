@@ -23,11 +23,11 @@ public class WeldMapperMain {
         // with the FlowLine class
         FlowLine gettngDirection = new FlowLine();
         gettngDirection.CaptureDirection();
+        System.out.println("Today's date is: ");
         System.out.println(date);
         
         System.out.println("Do you wish to collect Data? ");
         String proceed = br.readLine();
-        //proceed = proceed.toUpperCase();
         while (proceed.equalsIgnoreCase("yes")) {
         cc.dataCollectingChoices();
         System.out.println("Do you wish to collect Data? ");

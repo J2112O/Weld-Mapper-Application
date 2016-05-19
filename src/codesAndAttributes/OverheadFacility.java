@@ -34,7 +34,7 @@ public class OverheadFacility extends BasicAttributes {
 	}
 	
 	public void overheadFacilityDataCollect() throws IOException {
-		System.out.println("Enter the GPS Shot for this Code: ");
+		System.out.println("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the wire count for the Overhead Facility: ");
 		setWireCount(Integer.parseInt(br.readLine()));

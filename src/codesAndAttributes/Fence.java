@@ -2,7 +2,6 @@
  * This class captures existing Fence crossings. 
  */
 package codesAndAttributes;
-
 import java.io.*;
 
 public class Fence extends BasicAttributes {

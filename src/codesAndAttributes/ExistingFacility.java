@@ -12,6 +12,7 @@ public class ExistingFacility extends BasicAttributes{
 	private double size;
 	private String crossingProp;
 	private String depthMethod;
+	private String shotLocation;
 	private double depthInDecFeet;
 	private double clearanceInDecFeet;
 		
@@ -54,6 +55,12 @@ public class ExistingFacility extends BasicAttributes{
 	public void setClearanceInDecFeet(double clearanceInDecFeet) {
 		this.clearanceInDecFeet = clearanceInDecFeet;
 	}
+	public String getShotLocation() {
+		return shotLocation;
+	}
+	public void setShotLocation(String shotLocation) {
+		this.shotLocation = shotLocation;
+	}
 	
 	public void existingFacilityDataCollect() throws IOException {
 		System.out.print("Enter the GPS Point for this Code: ");
@@ -68,6 +75,8 @@ public class ExistingFacility extends BasicAttributes{
 		displayDepthMethods(depthMethodTypes);
 		System.out.print(": ");
 		setDepthMethod(br.readLine());
+		System.out.print("Shot location on exposed Existing Facility? (Yes or No) ");
+		setShotLocation(br.readLine());
 		System.out.print("Depth in Decimal Feet: ");
 		setDepthInDecFeet(Double.parseDouble(br.readLine()));
 		System.out.print("Clearance in Decimal Feet: ");
@@ -81,4 +90,5 @@ public class ExistingFacility extends BasicAttributes{
 			System.out.println(x[i]);
 		}
 	}
+	
 }

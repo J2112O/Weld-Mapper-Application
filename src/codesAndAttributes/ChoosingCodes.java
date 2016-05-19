@@ -84,6 +84,7 @@ public class ChoosingCodes {
 				weld.weldDataCollect();
 			} else {
 				System.out.println("That choice is not a valid entry, choose again: ");
+				dataCollectingChoices();
 			}
 		}
 	}	

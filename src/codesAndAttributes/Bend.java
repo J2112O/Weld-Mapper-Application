@@ -1,17 +1,16 @@
 /*
- *	This class is used for two kinds of Bends. Sags and Overbends both. 
+ *	This class is used for two kinds of Bends. Sags and Over bends both. 
  **/
 package codesAndAttributes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 public class Bend extends BasicAttributes {
+	
 	BufferedReader br = new BufferedReader(new
 				InputStreamReader(System.in));
-	
-	
+		
 	// Creating a instance of the Basic Attributes Class here.
 	BasicAttributes bA = new BasicAttributes();
 	
@@ -48,7 +47,7 @@ public class Bend extends BasicAttributes {
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
 		setType(br.readLine());
-		System.out.format("Enter the degree: ");
+		System.out.format("Enter the degree of the Bend: ");
 		setDegree(Double.parseDouble(br.readLine()));
 		System.out.print("Enter the Natural Ground shot for cover: ");
 		bA.setNgc(Integer.parseInt(br.readLine()));

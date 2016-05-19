@@ -18,6 +18,5 @@ public class BoreWall extends BasicAttributes {
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
-		
 	}
 }
