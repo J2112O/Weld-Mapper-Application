@@ -11,7 +11,7 @@ public class PipeTop extends BasicAttributes {
 	BasicAttributes bA = new BasicAttributes();
 	
 	public void pipeTopDataCollect() throws NumberFormatException, IOException {
-		System.out.println("Enter the GPS Shot for the Code: ");
+		System.out.println("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());

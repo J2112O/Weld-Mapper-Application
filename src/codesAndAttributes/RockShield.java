@@ -21,7 +21,7 @@ public class RockShield extends BasicAttributes {
 	}
 	
 	public void rockShieldDataCollect() throws IOException {
-		System.out.println("Enter the GPS Shot for this Code: ");
+		System.out.println("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Position (Begin or End): ");
 		setPosition(br.readLine());

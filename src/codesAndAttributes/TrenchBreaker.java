@@ -21,7 +21,7 @@ public class TrenchBreaker extends BasicAttributes {
 	}
 	
 	public void trenchBreakerDataCollect() throws IOException {
-		System.out.println("Enter the GPS Shot for this Code: ");
+		System.out.println("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the Type: \n");
 		bA.displayCertainTypes(trenchbrkrTypes);

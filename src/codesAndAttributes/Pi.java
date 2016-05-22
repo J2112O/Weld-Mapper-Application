@@ -36,7 +36,7 @@ public class Pi extends BasicAttributes {
 	}
 	
 	public void piDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Shot for this Code: ");
+		System.out.print("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bendTypes);

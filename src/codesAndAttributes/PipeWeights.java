@@ -36,7 +36,7 @@ public class PipeWeights extends BasicAttributes {
 	}
 	
 	public void pipeWeightDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Shot for this Code: ");
+		System.out.print("Enter the GPS Point for this Code: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Type of Pipe Weight: \n");
 		bA.displayCertainTypes(pipeWeights);

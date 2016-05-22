@@ -3,18 +3,18 @@ package codesAndAttributes;
 public class BasicAttributes {
 	
 	// An array of the Bend Types
-	protected String[] bendTypes = {"Field","Forged","Hot"};
+	protected String[] bendTypes = {"Field","Forged","Hot","Other(See Notes)"};
 	// An array of the types of welds
 	protected String[] weldTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
-				"Transition","Existing","Repair"};
+				"Transition","Existing","Repair","Other(See Notes)"};
 	// An array of Pipe Weight types
-	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor"};
+	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor","Other(See Notes)"};
 	// An array of Trench Breaker types
 	protected String[] trenchbrkrTypes = {"Foam","Cement","Sand Bags","Other(See Notes)"};
 	// An array of Underground Facility Locations
 	protected String[] locations = {"Ground Not Exposed","On Exposed Facility","Other(See Notes)"};
 	// An array of Underground Facility types
-	protected String[] utiliyType = {"Fiber Optic","Water","Electric","Telephone","TV Cable","Unknown"};
+	protected String[] utiliyType = {"Fiber Optic","Water","Electric","Telephone","TV Cable","Unknown","Other(See Notes)"};
 	// An array of shot positions in relation to Underground Facilities
 	protected String[] positions = {"Above","Below","Other(See Notes)"};
 	
