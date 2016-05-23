@@ -3,24 +3,24 @@ package codesAndAttributes;
 public class BasicAttributes {
 	
 	// An array of the Bend Types
-	protected String[] bendTypes = {"Field","Forged","Hot","Other(See Notes)"};
+	protected String[] bendTypes = {"FIELD","FORGED","HOT","OTHER(SEE NOTES)"};
 	// An array of the types of welds
-	protected String[] weldTypes = {"Mainline","Tie-In","Valve Site","Fabrication",
-				"Transition","Existing","Repair","Other(See Notes)"};
+	protected String[] weldTypes = {"MAINLINE","TIE-IN","VALVE SITE","FABRICATION",
+				"TRANSITION","EXISTING","REPAIR","OTHER(SEE NOTES)"};
 	// An array of Pipe Weight types
-	protected String[] pipeWeights = {"Sandbag","Concrete Set-On","Concrete Bolt-On","Anchor","Other(See Notes)"};
+	protected String[] pipeWeights = {"SANDBAG","CONCRETE SET-ON","CONCRETE BOLT-ON","ANCHOR","OTHER(SEE NOTES)"};
 	// An array of Trench Breaker types
-	protected String[] trenchbrkrTypes = {"Foam","Cement","Sand Bags","Other(See Notes)"};
+	protected String[] trenchbrkrTypes = {"FOAM","CEMENT","SAND BAGS","OTHER(SEE NOTES)"};
 	// An array of Underground Facility Locations
-	protected String[] locations = {"Ground Not Exposed","On Exposed Facility","Other(See Notes)"};
+	protected String[] locations = {"GROUND NOT EXPOSED","ON EXPOSED FACILITY","OTHER(SEE NOTES)"};
 	// An array of Underground Facility types
-	protected String[] utiliyType = {"Fiber Optic","Water","Electric","Telephone","TV Cable","Unknown","Other(See Notes)"};
+	protected String[] utiliyType = {"FIBER OPTIC","WATER","ELECTRIC","TELEPHONE","TV CABLE","UNKNOWN","OTHER(SEE NOTES)"};
 	// An array of shot positions in relation to Underground Facilities
-	protected String[] positions = {"Above","Below","Other(See Notes)"};
+	protected String[] positions = {"ABOVE","BELOW","OTHER(SEE NOTES)"};
 	// An array of tops
-	protected String[] tops = {"Ditch","Natural Drain","Creek","Slope","Other(See Notes)"};
+	protected String[] tops = {"DITCH","NATURAL DRAIN","CREEK","SLOPE","OTHER(SEE NOTES)"};
 	// An array of centerlines for certain features
-	protected String[] centers = {"Ditch","Natural Drain","Creek","Other(See Notes)"};
+	protected String[] centers = {"DITCH","NATURAL DRAIN","CREEK","OTHER(SEE NOTES)"};
 	
 	protected int gpsShot;
 	protected double cover;

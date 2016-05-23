@@ -20,7 +20,19 @@ public class Weld extends BasicAttributes {
 	private String wallChange;
 	private String pipeLocation;
 	private String welderInitials;
-
+	// These variables are for the pipe tally/cuts method
+	private String parentPipe;
+	private int pipeJoint;
+	private int pipeHeat;
+	private double pipeLength;
+	private double cutLength;
+	private String pipeMaker;
+	private String coatingType;
+	private String coatingThickness;
+	private double wallThickness;
+	
+	private String response;
+	
 	public String getWeldType() {
 		return weldType;
 	}
@@ -104,6 +116,96 @@ public class Weld extends BasicAttributes {
 		setWelderInitials(br.readLine());
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
+		System.out.print("Do you have any pipe to Tally for this Weld? ");
+		response = br.readLine();
+		if(response.equalsIgnoreCase("yes")) {
+			tallyDataCollect();
+		} else {
+			System.out.println("Pipe Tally Not Needed.");
+		}
 
 	}
+	public String getParentPipe() {
+		return parentPipe;
+	}
+	public void setParentPipe(String parentPipe) {
+		this.parentPipe = parentPipe;
+	}
+	public int getPipeJoint() {
+		return pipeJoint;
+	}
+	public void setPipeJoint(int pipeJoint) {
+		this.pipeJoint = pipeJoint;
+	}
+	public int getPipeHeat() {
+		return pipeHeat;
+	}
+	public void setPipeHeat(int pipeHeat) {
+		this.pipeHeat = pipeHeat;
+	}
+	public double getPipeLength() {
+		return pipeLength;
+	}
+	public void setPipeLength(double pipeLength) {
+		this.pipeLength = pipeLength;
+	}
+	public double getCutLength() {
+		return cutLength;
+	}
+	public void setCutLength(double cutLength) {
+		this.cutLength = cutLength;
+	}
+	public String getPipeMaker() {
+		return pipeMaker;
+	}
+	public void setPipeMaker(String pipeMaker) {
+		this.pipeMaker = pipeMaker;
+	}
+	public String getCoatingType() {
+		return coatingType;
+	}
+	public void setCoatingType(String coatingType) {
+		this.coatingType = coatingType;
+	}
+	public String getCoatingThickness() {
+		return coatingThickness;
+	}
+	public void setCoatingThickness(String coatingThickness) {
+		this.coatingThickness = coatingThickness;
+	}
+	public double getWallThickness() {
+		return wallThickness;
+	}
+	public void setWallThickness(double wallThickness) {
+		this.wallThickness = wallThickness;
+	}
+	public String getResponse() {
+		return response;
+	}
+	public void setResponse(String response) {
+		this.response = response;
+	}
+	
+	public void tallyDataCollect() throws IOException {
+		System.out.print("Enter the Parent Pipe name or ID: ");
+		setParentPipe(br.readLine());
+		System.out.print("Enter the Parent Pipe Joint Number: ");
+		setPipeJoint(Integer.parseInt(br.readLine()));
+		System.out.print("Enter the Parent Pipe's Heat Number: ");
+		setPipeHeat(Integer.parseInt(br.readLine()));
+		System.out.print("Enter the Parent Pipe's Original Length: ");
+		setPipeLength(Double.parseDouble(br.readLine()));
+		System.out.print("Enter the Length of the cut made to the Parent Pipe: ");
+		setCutLength(Double.parseDouble(br.readLine()));
+		System.out.print("Enter the Parent Pipe's Manufacturer: ");
+		setPipeMaker(br.readLine());
+		System.out.print("Enter the Parent Pipe's Coating Type: ");
+		setCoatingType(br.readLine());
+		System.out.print("Enter the Parent Pipe's Coating Thickness: ");
+		setCoatingThickness(br.readLine());
+		System.out.print("Enter the Parent Pipe's Wall Thickness: ");
+		setWallThickness(Double.parseDouble(br.readLine()));
+	}
+	
+	
 }
