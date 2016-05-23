@@ -20,6 +20,7 @@ public class ChoosingCodes {
 	Bend bend = new Bend();
 	BoreWall bW = new BoreWall();
 	CadWeld cad = new CadWeld();
+	CenterlineOf cl = new CenterlineOf();
 	ComboBend cmbo = new ComboBend();
 	ExistingFacility eF = new ExistingFacility();
 	Fence fnc = new Fence();
@@ -31,6 +32,7 @@ public class ChoosingCodes {
 	PipeWeights pw = new PipeWeights();
 	RockShield rShield = new RockShield();
 	TrenchBreaker tb = new TrenchBreaker();
+	TopOf top = new TopOf();
 	UndergroundFacility uF = new UndergroundFacility();
 	Valve vlv = new Valve();
 	Weld weld = new Weld();

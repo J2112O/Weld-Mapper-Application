@@ -17,6 +17,10 @@ public class BasicAttributes {
 	protected String[] utiliyType = {"Fiber Optic","Water","Electric","Telephone","TV Cable","Unknown","Other(See Notes)"};
 	// An array of shot positions in relation to Underground Facilities
 	protected String[] positions = {"Above","Below","Other(See Notes)"};
+	// An array of tops
+	protected String[] tops = {"Ditch","Natural Drain","Creek","Slope","Other(See Notes)"};
+	// An array of centerlines for certain features
+	protected String[] centers = {"Ditch","Natural Drain","Creek","Other(See Notes)"};
 	
 	protected int gpsShot;
 	protected double cover;

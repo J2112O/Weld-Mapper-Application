@@ -15,6 +15,7 @@ public class UndergroundFacility extends BasicAttributes {
 	private double depthFromGround;
 	private double clearanceFromPipe;
 	private String pipelinePosition;
+	
 	public String getShotLocation() {
 		return shotLocation;
 	}
@@ -57,5 +58,13 @@ public class UndergroundFacility extends BasicAttributes {
 		bA.displayCertainTypes(utiliyType);
 		System.out.print(": ");
 		setUtilityType(br.readLine());
+		System.out.println("Depth from Ground: ");
+		setDepthFromGround(Double.parseDouble(br.readLine()));
+		System.out.println("Clearance from Pipeline: ");
+		setClearanceFromPipe(Double.parseDouble(br.readLine()));
+		System.out.println("Asbuilt Pipeline: (Above, Below, Other(See Notes) )");
+		setPipelinePosition(br.readLine());
+		System.out.println("Notes: ");
+		bA.setNotes(br.readLine());
 	}
 }

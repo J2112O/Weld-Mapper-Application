@@ -40,7 +40,7 @@ public class OverheadFacility extends BasicAttributes {
 		setWireCount(Integer.parseInt(br.readLine()));
 		System.out.println("Height: ");
 		setHeight(Double.parseDouble(br.readLine()));
-		System.out.println("Transmission line? (Yes or No): ");
+	 	System.out.println("Is it a Transmission line? (Yes or No): ");
 		setType(br.readLine());
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());
