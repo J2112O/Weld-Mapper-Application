@@ -22,7 +22,7 @@ public class Weld extends BasicAttributes {
 	private String welderInitials;
 	// These variables are for the pipe tally/cuts method
 	private String parentPipe;
-	private int pipeJoint;
+	private String pipeJoint;
 	private int pipeHeat;
 	private double pipeLength;
 	private double cutLength;
@@ -122,6 +122,7 @@ public class Weld extends BasicAttributes {
 			tallyDataCollect();
 		} else {
 			System.out.println("Pipe Tally Not Needed.");
+			//return;
 		}
 
 	}
@@ -131,10 +132,10 @@ public class Weld extends BasicAttributes {
 	public void setParentPipe(String parentPipe) {
 		this.parentPipe = parentPipe;
 	}
-	public int getPipeJoint() {
+	public String getPipeJoint() {
 		return pipeJoint;
 	}
-	public void setPipeJoint(int pipeJoint) {
+	public void setPipeJoint(String pipeJoint) {
 		this.pipeJoint = pipeJoint;
 	}
 	public int getPipeHeat() {
@@ -190,7 +191,7 @@ public class Weld extends BasicAttributes {
 		System.out.print("Enter the Parent Pipe name or ID: ");
 		setParentPipe(br.readLine());
 		System.out.print("Enter the Parent Pipe Joint Number: ");
-		setPipeJoint(Integer.parseInt(br.readLine()));
+		setPipeJoint(br.readLine());
 		System.out.print("Enter the Parent Pipe's Heat Number: ");
 		setPipeHeat(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Parent Pipe's Original Length: ");

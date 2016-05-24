@@ -14,7 +14,7 @@ public class ComboBend extends BasicAttributes {
 	// Making a new instance of the BasicAttributes class
 	BasicAttributes bA = new BasicAttributes();
 
-	String[] bendDirections = {"SBLT","SBRT","Overbend","Sag"};
+	String[] bendDirections = {"SBLT","SBRT","OVERBEND","SAG"};
 	
 	private String bendType;
 	private String direction1;

@@ -10,7 +10,7 @@ public class BasicAttributes {
 	// An array of Pipe Weight types
 	protected String[] pipeWeights = {"SANDBAG","CONCRETE SET-ON","CONCRETE BOLT-ON","ANCHOR","OTHER(SEE NOTES)"};
 	// An array of Trench Breaker types
-	protected String[] trenchbrkrTypes = {"FOAM","CEMENT","SAND BAGS","OTHER(SEE NOTES)"};
+	protected String[] trenchbrkrTypes = {"FOAM","CEMENT","SANDBAGS","OTHER(SEE NOTES)"};
 	// An array of Underground Facility Locations
 	protected String[] locations = {"GROUND NOT EXPOSED","ON EXPOSED FACILITY","OTHER(SEE NOTES)"};
 	// An array of Underground Facility types

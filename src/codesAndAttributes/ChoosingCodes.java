@@ -13,9 +13,9 @@ public class ChoosingCodes {
 	// Using this string to capture user input for the code to collect data for
 	private String codeChoice;
 	// An array of the codes to choose from to collect data for
-	private String[] codes = {"BEND(SAG OR OVERBEND)","BORE WALL","CAD WELD","COMBO BEND","EXISTING FACILITY",
+	private String[] codes = {"BEND(SAG OR OVERBEND)","BORE WALL","CAD WELD","CENTERLINE OF..","COMBO BEND","EXISTING FACILITY",
 			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD FACILITY","PI(SIDEBEND)","PIPE TOP",
-			"PW(PIPE WEIGHTS)","ROCKSHIELD","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
+			"PW(PIPE WEIGHTS)","ROCKSHIELD","TOP OF..","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
 	// Creating instances of all the codes available to collect data for
 	Bend bend = new Bend();
 	BoreWall bW = new BoreWall();

@@ -17,7 +17,7 @@ public class ExistingFacility extends BasicAttributes{
 	private double clearanceInDecFeet;
 		
 	// An array of the Depth Methods
-	private String[] depthMethodTypes = {"Locator","Probed","Potholed","Other(See Notes)"};
+	private String[] depthMethodTypes = {"LOCATOR","PROBE","POTHOLED","OTHER(SEE NOTES)"};
 	
 	public String getOwner() {
 		return owner;

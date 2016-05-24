@@ -13,8 +13,8 @@ public class Fence extends BasicAttributes {
 	BasicAttributes bA = new BasicAttributes();
 	
 	// An Array of the fence types
-	private String[] fenceTypes = {"Barbwire","Chainlink","Chainlink w/Barb","Chicken Wire",
-			"Electric","Hog Wire","Metal","Pipe","Plastic","Rock","Steel Cable","Wood"};
+	private String[] fenceTypes = {"BARBWIRE","CHAINLINK","CHAINLINK W/BARB","CHICKEN WIRE",
+			"ELECTRIC","HOT WIRE","METAL","PIPE","PLASTIC","ROCK","STEEL CABLE","WOOD"};
 	
 	private String type;
 	private String shotLocation;
