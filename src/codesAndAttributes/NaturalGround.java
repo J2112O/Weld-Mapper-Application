@@ -20,7 +20,7 @@ public class NaturalGround extends BasicAttributes {
 	}
 	
 	public void naturalGroundDataCollect() throws IOException {
- 		System.out.println("Enter the GPS Point for this Code: "); 
+ 		System.out.println("Enter the GPS Point for this Feature: ");
 		setNaturalGround(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());

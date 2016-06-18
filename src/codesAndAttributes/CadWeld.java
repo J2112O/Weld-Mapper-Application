@@ -23,7 +23,7 @@ public class CadWeld extends BasicAttributes {
 	}
 	
 	public void cadWeldDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Wire Count for the Cad Weld: ");
 		setWireCount(Integer.parseInt(br.readLine()));

@@ -63,7 +63,7 @@ public class ExistingFacility extends BasicAttributes{
 	}
 	
 	public void existingFacilityDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the owner of the Existing Facility: ");
 		setOwner(br.readLine());

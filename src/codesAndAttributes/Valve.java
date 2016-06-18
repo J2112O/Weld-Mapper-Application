@@ -49,7 +49,7 @@ public class Valve extends BasicAttributes {
 	}
 	
 	public void valveDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the position of this locate: ");
 		displayValvePositions(valvePositions);

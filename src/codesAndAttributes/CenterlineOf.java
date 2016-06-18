@@ -25,7 +25,7 @@ public class CenterlineOf extends BasicAttributes {
 	}
 	
 	public void centerLineDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Centerline Of feature: \n");
 		bA.displayCertainTypes(bA.centers);

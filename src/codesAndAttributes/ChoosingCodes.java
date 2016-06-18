@@ -13,9 +13,9 @@ public class ChoosingCodes {
 	// Using this string to capture user input for the code to collect data for
 	private String codeChoice;
 	// An array of the codes to choose from to collect data for
-	private String[] codes = {"BEND(SAG OR OVERBEND)","BORE WALL","CAD WELD","CENTERLINE OF..","COMBO BEND","EXISTING FACILITY",
-			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD FACILITY","PI(SIDEBEND)","PIPE TOP",
-			"PW(PIPE WEIGHTS)","ROCKSHIELD","TOP OF..","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
+	private String[] codes = {"BEND (SAG OR OVERBEND)","BORE WALL","CAD WELD","CENTERLINE OF..","COMBO BEND","EXISTING FACILITY",
+			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD FACILITY","PI (SIDEBEND)","PIPE TOP",
+			"PW (PIPE WEIGHTS)","ROCKSHIELD","TOP OF..","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
 	// Creating instances of all the codes available to collect data for
 	Bend bend = new Bend();
 	BoreWall bW = new BoreWall();
@@ -84,6 +84,10 @@ public class ChoosingCodes {
 				vlv.valveDataCollect();
 			} else if (codeChoice.equalsIgnoreCase("weld")) {
 				weld.weldDataCollect();
+			} else if(codeChoice.equalsIgnoreCase("top of")) {
+				top.topOfDataCollect();
+			} else if(codeChoice.equalsIgnoreCase("centerline of")) {
+				cl.centerLineDataCollect();
 			} else {
 				System.out.println("That choice is not a valid entry, choose again: ");
 				dataCollectingChoices();

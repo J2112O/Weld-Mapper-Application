@@ -88,7 +88,7 @@ public class Weld extends BasicAttributes {
 		this.welderInitials = welderInitials;
 	}
 	public void weldDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the Weld Type.. ");
 		displayCertainTypes(bA.weldTypes);

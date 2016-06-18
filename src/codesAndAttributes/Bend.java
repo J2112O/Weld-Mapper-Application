@@ -39,7 +39,7 @@ public class Bend extends BasicAttributes {
 	
 	public void bendDataCollect() throws IOException {
 		
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Sag or Overbend? ");
 		setKind(br.readLine());

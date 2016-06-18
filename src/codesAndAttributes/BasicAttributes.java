@@ -14,7 +14,7 @@ public class BasicAttributes {
 	// An array of Underground Facility Locations
 	protected String[] locations = {"GROUND NOT EXPOSED","ON EXPOSED FACILITY","OTHER(SEE NOTES)"};
 	// An array of Underground Facility types
-	protected String[] utiliyType = {"FIBER OPTIC","WATER","ELECTRIC","TELEPHONE","TV CABLE","UNKNOWN","OTHER(SEE NOTES)"};
+	protected String[] utilityTypes = {"FIBER OPTIC","WATER","ELECTRIC","TELEPHONE","TV CABLE","UNKNOWN","OTHER(SEE NOTES)"};
 	// An array of shot positions in relation to Underground Facilities
 	protected String[] positions = {"ABOVE","BELOW","OTHER(SEE NOTES)"};
 	// An array of tops

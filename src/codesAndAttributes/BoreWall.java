@@ -14,7 +14,7 @@ public class BoreWall extends BasicAttributes {
 	BasicAttributes bA = new BasicAttributes();
 	
 	public void boreWallDataCollect() throws IOException {
- 		System.out.print("Enter the GPS Point for this Code: ");
+ 		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());

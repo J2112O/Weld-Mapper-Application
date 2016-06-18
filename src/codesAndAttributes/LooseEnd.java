@@ -20,7 +20,7 @@ public class LooseEnd extends BasicAttributes {
 		this.position = position;
 	}
 	public void looseEndDataCollect() throws IOException {
-		System.out.println("Enter the GPS Point for this Code: ");
+		System.out.println("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("On skids (Yes or No): ");
 		setPosition(br.readLine());

@@ -48,14 +48,14 @@ public class UndergroundFacility extends BasicAttributes {
 	}
 	
 	public void undergroundFacilityDataCollect() throws IOException {
-		System.out.println("Enter the GPS Point for this Code: ");
+		System.out.println("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.println("Enter the Shot Location: \n");
 		bA.displayCertainTypes(locations);
 		System.out.print(": ");
 		setShotLocation(br.readLine());
 		System.out.println("Enter the Underground Facility Type: \n");
-		bA.displayCertainTypes(utiliyType);
+		bA.displayCertainTypes(utilityTypes);
 		System.out.print(": ");
 		setUtilityType(br.readLine());
 		System.out.println("Depth from Ground: ");

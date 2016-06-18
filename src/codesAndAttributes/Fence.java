@@ -51,7 +51,7 @@ public class Fence extends BasicAttributes {
 		}
 	}
 	public void fenceDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Point for this Code: ");
+		System.out.print("Enter the GPS Point for this Feature: ");
 		bA.setGpsShot(Integer.parseInt(br.readLine()));
 		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
