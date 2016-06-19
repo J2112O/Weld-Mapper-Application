@@ -3,6 +3,7 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
 
 public class Valve extends BasicAttributes {
 	
@@ -49,8 +50,15 @@ public class Valve extends BasicAttributes {
 	}
 	
 	public void valveDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Enter the position of this locate: ");
 		displayValvePositions(valvePositions);
 		setPosition(br.readLine());
@@ -58,6 +66,5 @@ public class Valve extends BasicAttributes {
 		setValveId(br.readLine());
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());
-		
 	}
 }

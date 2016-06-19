@@ -3,6 +3,7 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
 
 public class PipeWeights extends BasicAttributes {
 	
@@ -36,8 +37,15 @@ public class PipeWeights extends BasicAttributes {
 	}
 	
 	public void pipeWeightDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+				System.out.print("Enter the GPS Point for this Feature: ");
+				bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Enter the Type of Pipe Weight: \n");
 		bA.displayCertainTypes(pipeWeights);
 		System.out.print(": ");
@@ -45,8 +53,15 @@ public class PipeWeights extends BasicAttributes {
 		System.out.print("Enter the Position of the Pipe Weight ");
 		System.out.print("(Begin,End or Individual): ");
 		setPosition(br.readLine());
-		System.out.print("Enter the Pipe Weight Count: ");
-		setCount(Integer.parseInt(br.readLine()));
+        while (true) {
+            try {
+                System.out.print("Enter the Pipe Weight Count: ");
+                setCount(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
 

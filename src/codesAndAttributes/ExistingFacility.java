@@ -2,6 +2,8 @@ package codesAndAttributes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
+
 public class ExistingFacility extends BasicAttributes{
 	
 	BufferedReader br = new BufferedReader(new
@@ -63,12 +65,26 @@ public class ExistingFacility extends BasicAttributes{
 	}
 	
 	public void existingFacilityDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.println("Enter the owner of the Existing Facility: ");
 		setOwner(br.readLine());
-		System.out.print("Enter the size (in inches) of the Existing Facility: ");
-		setSize(Integer.parseInt(br.readLine()));
+        while (true) {
+            try {
+                System.out.print("Enter the size (in inches) of the Existing Facility: ");
+                setSize(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Crossing proposed route? (Yes or No) ");
 		setCrossingProp(br.readLine());
 		System.out.print("Enter the Depth Method: \n");
@@ -77,13 +93,26 @@ public class ExistingFacility extends BasicAttributes{
 		setDepthMethod(br.readLine());
 		System.out.print("Shot location on exposed Existing Facility? (Yes or No) ");
 		setShotLocation(br.readLine());
-		System.out.print("Depth in Decimal Feet: ");
-		setDepthInDecFeet(Double.parseDouble(br.readLine()));
-		System.out.print("Clearance in Decimal Feet: ");
-		setClearanceInDecFeet(Double.parseDouble(br.readLine()));
+        while (true) {
+            try {
+                System.out.print("Depth in Decimal Feet: ");
+                setDepthInDecFeet(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+		while (true) {
+            try {
+                System.out.print("Clearance in Decimal Feet: ");
+                setClearanceInDecFeet(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
-	
 		}
 	public void displayDepthMethods(String[] x) {
 		for(int i = 0; i < x.length; i++) {

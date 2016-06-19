@@ -3,6 +3,8 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
+
 public class OverheadFacility extends BasicAttributes {
 	
 	BufferedReader br = new BufferedReader(new
@@ -34,12 +36,33 @@ public class OverheadFacility extends BasicAttributes {
 	}
 	
 	public void overheadFacilityDataCollect() throws IOException {
-		System.out.println("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
-		System.out.println("Enter the wire count for the Overhead Facility: ");
-		setWireCount(Integer.parseInt(br.readLine()));
-		System.out.println("Height: ");
-		setHeight(Double.parseDouble(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
+		while (true) {
+            try {
+				System.out.println("Enter the wire count for the Overhead Facility: ");
+				setWireCount(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
+        while (true) {
+            try {
+                System.out.println("Height: ");
+                setHeight(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
 	 	System.out.println("Is it a Transmission line? (Yes or No): ");
 		setType(br.readLine());
 		System.out.println("Notes: ");

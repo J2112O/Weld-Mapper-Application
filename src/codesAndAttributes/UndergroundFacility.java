@@ -3,6 +3,8 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
+
 public class UndergroundFacility extends BasicAttributes {
 
 	BufferedReader br = new BufferedReader(new
@@ -48,8 +50,15 @@ public class UndergroundFacility extends BasicAttributes {
 	}
 	
 	public void undergroundFacilityDataCollect() throws IOException {
-		System.out.println("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.println("Enter the Shot Location: \n");
 		bA.displayCertainTypes(locations);
 		System.out.print(": ");
@@ -58,11 +67,25 @@ public class UndergroundFacility extends BasicAttributes {
 		bA.displayCertainTypes(utilityTypes);
 		System.out.print(": ");
 		setUtilityType(br.readLine());
-		System.out.println("Depth from Ground: ");
-		setDepthFromGround(Double.parseDouble(br.readLine()));
-		System.out.println("Clearance from Pipeline: ");
-		setClearanceFromPipe(Double.parseDouble(br.readLine()));
-		System.out.println("Asbuilt Pipeline: (Above, Below, Other(See Notes) )");
+		while (true) {
+            try {
+				System.out.println("Depth from Ground: ");
+				setDepthFromGround(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+		while (true) {
+            try {
+                System.out.println("Clearance from Pipeline: ");
+                setClearanceFromPipe(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+		System.out.println("As-built Pipeline: (Above, Below, Other(See Notes) )");
 		setPipelinePosition(br.readLine());
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());

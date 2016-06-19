@@ -3,6 +3,7 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
 
 public class LooseEnd extends BasicAttributes {
 
@@ -20,12 +21,18 @@ public class LooseEnd extends BasicAttributes {
 		this.position = position;
 	}
 	public void looseEndDataCollect() throws IOException {
-		System.out.println("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.println("On skids (Yes or No): ");
 		setPosition(br.readLine());
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());
-	
 	}
 }

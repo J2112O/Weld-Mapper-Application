@@ -3,6 +3,7 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
 
 public class Weld extends BasicAttributes {
 	
@@ -87,9 +88,17 @@ public class Weld extends BasicAttributes {
 	public void setWelderInitials(String welderInitials) {
 		this.welderInitials = welderInitials;
 	}
+
 	public void weldDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+			try {
+				System.out.print("Enter the GPS Point for this Feature: ");
+				bA.setGpsShot(Integer.parseInt(br.readLine()));
+				break;
+			} catch (InputMismatchException | NumberFormatException ex) {
+				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+			}
+		}
 		System.out.println("Enter the Weld Type.. ");
 		displayCertainTypes(bA.weldTypes);
 		System.out.print(": ");
@@ -102,17 +111,38 @@ public class Weld extends BasicAttributes {
 		setPipeAhead(br.readLine());
 		System.out.print("Enter the Heat ahead: ");
 		setHeatAhead(br.readLine());
-		System.out.print("Enter the Length ahead: ");
-		setLengthAhead(Double.parseDouble(br.readLine()));
-		System.out.print("Enter the Natural Ground shot for cover: ");
-		bA.setNgc(Integer.parseInt(br.readLine()));
-		System.out.print("Enter the Cover: ");
-		bA.setCover(Double.parseDouble(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the Length ahead: ");
+                setLengthAhead(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+        while (true) {
+			try {
+                System.out.print("Enter the Natural Ground shot for cover: ");
+                bA.setNgc(Integer.parseInt(br.readLine()));
+				break;
+			} catch (InputMismatchException | NumberFormatException ex) {
+				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+			}
+		}
+        while (true) {
+			try {
+                System.out.print("Enter the Cover: ");
+                bA.setCover(Double.parseDouble(br.readLine()));
+				break;
+			} catch (InputMismatchException | NumberFormatException ex) {
+				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+			}
+		}
 		System.out.print("Wall change? (Yes or No) ");
 		setWallChange(br.readLine());
 		System.out.print("Pipe in ditch (Yes or No): ");
 		setPipeLocation(br.readLine());
-		System.out.println("Welder initialis: ");
+		System.out.println("Welder initials: ");
 		setWelderInitials(br.readLine());
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());

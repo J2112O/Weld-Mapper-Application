@@ -24,6 +24,5 @@ public class NaturalGround extends BasicAttributes {
 		setNaturalGround(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
-		
 	}
 }

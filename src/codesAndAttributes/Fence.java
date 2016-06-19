@@ -3,6 +3,7 @@
  */
 package codesAndAttributes;
 import java.io.*;
+import java.util.InputMismatchException;
 
 public class Fence extends BasicAttributes {
 	
@@ -51,18 +52,39 @@ public class Fence extends BasicAttributes {
 		}
 	}
 	public void fenceDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Enter the Type of Fence.. \n");
 		displayFenceTypes(fenceTypes);
 		System.out.print(": ");
 		setType(br.readLine());
 		System.out.print("Shot location (Corner, Post, In Line, In Line(Meandering)): ");
 		setShotLocation(br.readLine());
-		System.out.print("Enter the height of the fence: ");
-		setHeight(Double.parseDouble(br.readLine()));
-		System.out.print("Enter the strand count: ");
-		setStrandCount(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+				System.out.print("Enter the height of the fence: ");
+				setHeight(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+        while (true) {
+            try {
+                System.out.print("Enter the strand count: ");
+                setStrandCount(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Notes: ");
 		bA.setNotes(br.readLine());
 				
