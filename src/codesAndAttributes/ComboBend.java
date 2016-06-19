@@ -5,6 +5,7 @@ package codesAndAttributes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
 
 public class ComboBend extends BasicAttributes {
 	
@@ -59,8 +60,15 @@ public class ComboBend extends BasicAttributes {
 	}
 
 	public void comboDataCollect() throws IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Enter the Bend Type: \n");
 		bA.displayCertainTypes(bA.bendTypes);
 		System.out.print(": ");
@@ -69,18 +77,46 @@ public class ComboBend extends BasicAttributes {
 		displayBendDirections(bendDirections);
 		System.out.println(": ");
 		setDirection1(br.readLine());
-		System.out.print("Degree 1: ");
-		setDegree1(Double.parseDouble(br.readLine()));
+		while (true) {
+            try {
+				System.out.print("Degree 1: ");
+				setDegree1(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
 		System.out.print("Direction 2: \n");
 		displayBendDirections(bendDirections);
 		System.out.print(": ");
 		setDirection2(br.readLine());
-		System.out.print("Degree 2: ");
-		setDegree2(Double.parseDouble(br.readLine()));
-		System.out.print("Enter the Natural Ground for Cover Shot: ");
-		bA.setNgc(Integer.parseInt(br.readLine()));
-		System.out.print("Enter the Cover: ");
-		bA.setCover(Double.parseDouble(br.readLine()));
+		while (true) {
+            try {
+				System.out.print("Degree 2: ");
+				setDegree2(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
+		while (true) {
+            try {
+                System.out.print("Enter the Natural Ground for Cover Shot: ");
+                bA.setNgc(Integer.parseInt(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
+        while (true) {
+            try {
+                System.out.print("Enter the Cover: ");
+                bA.setCover(Double.parseDouble(br.readLine()));
+                break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+            }
+        }
 		System.out.println("Notes: ");
 		bA.setNotes(br.readLine());
 	

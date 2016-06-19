@@ -5,6 +5,7 @@ package codesAndAttributes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
 
 public class CenterlineOf extends BasicAttributes {
 	
@@ -25,8 +26,15 @@ public class CenterlineOf extends BasicAttributes {
 	}
 	
 	public void centerLineDataCollect() throws NumberFormatException, IOException {
-		System.out.print("Enter the GPS Point for this Feature: ");
-		bA.setGpsShot(Integer.parseInt(br.readLine()));
+		while (true) {
+            try {
+                System.out.print("Enter the GPS Point for this Feature: ");
+                bA.setGpsShot(Integer.parseInt(br.readLine()));
+				break;
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+            }
+        }
 		System.out.print("Enter the Centerline Of feature: \n");
 		bA.displayCertainTypes(bA.centers);
 		System.out.print(": ");
