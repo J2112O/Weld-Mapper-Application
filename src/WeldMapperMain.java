@@ -11,21 +11,8 @@ public class WeldMapperMain {
 
 		Date date = new Date();
 		ChoosingCodes cc = new ChoosingCodes();
-		
-		System.out.print("Enter the location of work ");
-		System.out.print("(Tract, Road Crossing or Description of Area): ");
-		String workLocation = br.readLine();
-		
-		// Printing everything to upper-case with CapitalizeAllWords
-        System.out.println(workLocation.toUpperCase());
-        
-        // Getting the flow line direction of the pipeline to help establish direction
-        // with the FlowLine class
-        FlowLine gettngDirection = new FlowLine();
-        gettngDirection.CaptureDirection();
-        System.out.println("Today's date is: ");
-        System.out.println(date);
-        
+
+
         System.out.println("Do you wish to collect Data? ");
         String proceed = br.readLine();
         while (proceed.equalsIgnoreCase("yes")) {
