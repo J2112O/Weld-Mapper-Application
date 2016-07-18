@@ -14,32 +14,28 @@ public class CenterlineOf extends BasicAttributes {
 		
 	// Creating a instance of the Basic Attributes Class here.
 	BasicAttributes bA = new BasicAttributes();
-	
-	private String clPosition;
 
-	public String getClPosition() {
-		return clPosition;
-	}
+	// Creating an instance of the Codes class
+    Codes codes = new Codes();
 
-	public void setClPosition(String clPosition) {
-		this.clPosition = clPosition;
-	}
+    private void setClPosition() {
+    }
 	
-	public void centerLineDataCollect() throws NumberFormatException, IOException {
+	void centerLineDataCollect() throws NumberFormatException, IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
 				break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.print("Enter the Centerline Of feature: \n");
-		bA.displayCertainTypes(bA.centers);
+        codes.displayCodesAndTypes(codes.centers);
 		System.out.print(": ");
-		setClPosition(br.readLine());
+		this.setClPosition();
 		System.out.print("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 	}
 }

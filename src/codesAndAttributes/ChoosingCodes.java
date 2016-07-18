@@ -10,12 +10,16 @@ public class ChoosingCodes {
 	// Creating an instance of Buffer Reader
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
-	// Using this string to capture user input for the code to collect data for
+    Codes codes = new Codes();
+    String codeChoice;
+
+/*	// Using this string to capture user input for the codes to collect data for
 	private String codeChoice;
 	// An array of the codes to choose from to collect data for
 	private String[] codes = {"BEND (SAG OR OVERBEND)","BORE WALL","CAD WELD","CENTERLINE OF..","COMBO BEND","EXISTING FACILITY",
 			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD FACILITY","PI (SIDEBEND)","PIPE TOP",
 			"PW (PIPE WEIGHTS)","ROCKSHIELD","TOP OF..","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
+			*/
 	// Creating instances of all the codes available to collect data for
 	Bend bend = new Bend();
 	BoreWall bW = new BoreWall();
@@ -27,7 +31,6 @@ public class ChoosingCodes {
 	LooseEnd le = new LooseEnd();
 	NaturalGround ng = new NaturalGround();
 	OverheadFacility ohp = new OverheadFacility();
-	Pi pi = new Pi();
 	PipeTop pTop = new PipeTop();
 	PipeWeights pw = new PipeWeights();
 	RockShield rShield = new RockShield();
@@ -37,16 +40,17 @@ public class ChoosingCodes {
 	Valve vlv = new Valve();
 	Weld weld = new Weld();
 	
-	public void displayCodes() {
+	/*public void displayCodes() {
     	for(int i = 0; i < codes.length; i++) {
         	System.out.println(codes[i]);
         }
-    }
+    } */
 	
 	public void dataCollectingChoices() throws IOException {
-			// Getting the code choice from the user here..
+			// Getting the codes choice from the user here..
 			System.out.print("Enter the Code to collect data for: \n");
-			displayCodes();
+            codes.displayCodesAndTypes(codes.surveyCodes);
+			//displayCodes();
 			System.out.print(": ");
 			codeChoice = br.readLine();
 			// Calling instances of the requested available codes
@@ -68,8 +72,6 @@ public class ChoosingCodes {
 				ng.naturalGroundDataCollect();
 			} else if (codeChoice.equalsIgnoreCase("overhead facility")) {
 				ohp.overheadFacilityDataCollect();
-			} else if (codeChoice.equalsIgnoreCase("pi")) {
-				pi.piDataCollect();
 			} else if (codeChoice.equalsIgnoreCase("pipe top")) {
 				pTop.pipeTopDataCollect();
 			} else if (codeChoice.equalsIgnoreCase("pw")) {

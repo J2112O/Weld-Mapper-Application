@@ -9,7 +9,9 @@ public class ExistingFacility extends BasicAttributes{
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
 	BasicAttributes bA = new BasicAttributes();
-	
+
+	Codes codes = new Codes();
+
 	private String owner;
 	private double size;
 	private String crossingProp;
@@ -18,106 +20,99 @@ public class ExistingFacility extends BasicAttributes{
 	private double depthInDecFeet;
 	private double clearanceInDecFeet;
 		
-	// An array of the Depth Methods
-	private String[] depthMethodTypes = {"LOCATOR","PROBE","POTHOLED","OTHER(SEE NOTES)"};
-	
+
 	public String getOwner() {
 		return owner;
 	}
-	public void setOwner(String owner) {
+	private void setOwner(String owner) {
 		this.owner = owner;
 	}
 	public double getSize() {
 		return size;
 	}
-	public void setSize(double size) {
+	private void setSize(double size) {
 		this.size = size;
 	}
 	public String getCrossingProp() {
 		return crossingProp;
 	}
-	public void setCrossingProp(String crossingProp) {
+	private void setCrossingProp(String crossingProp) {
 		this.crossingProp = crossingProp;
 	}
 	public String getDepthMethod() {
 		return depthMethod;
 	}
-	public void setDepthMethod(String depthMethod) {
+	private void setDepthMethod(String depthMethod) {
 		this.depthMethod = depthMethod;
 	}
 	public double getDepthInDecFeet() {
 		return depthInDecFeet;
 	}
-	public void setDepthInDecFeet(double depthInDecFeet) {
+	private void setDepthInDecFeet(double depthInDecFeet) {
 		this.depthInDecFeet = depthInDecFeet;
 	}
 	public double getClearanceInDecFeet() {
 		return clearanceInDecFeet;
 	}
-	public void setClearanceInDecFeet(double clearanceInDecFeet) {
+	private void setClearanceInDecFeet(double clearanceInDecFeet) {
 		this.clearanceInDecFeet = clearanceInDecFeet;
 	}
 	public String getShotLocation() {
 		return shotLocation;
 	}
-	public void setShotLocation(String shotLocation) {
+	private void setShotLocation(String shotLocation) {
 		this.shotLocation = shotLocation;
 	}
 	
-	public void existingFacilityDataCollect() throws IOException {
+	void existingFacilityDataCollect() throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.println("Enter the owner of the Existing Facility: ");
-		setOwner(br.readLine());
+		this.setOwner(br.readLine());
         while (true) {
             try {
                 System.out.print("Enter the size (in inches) of the Existing Facility: ");
-                setSize(Integer.parseInt(br.readLine()));
+                this.setSize(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.print("Crossing proposed route? (Yes or No) ");
-		setCrossingProp(br.readLine());
+		this.setCrossingProp(br.readLine());
 		System.out.print("Enter the Depth Method: \n");
-		displayDepthMethods(depthMethodTypes);
+        codes.displayCodesAndTypes(codes.depthMethods);
 		System.out.print(": ");
-		setDepthMethod(br.readLine());
+		this.setDepthMethod(br.readLine());
 		System.out.print("Shot location on exposed Existing Facility? (Yes or No) ");
-		setShotLocation(br.readLine());
+		this.setShotLocation(br.readLine());
         while (true) {
             try {
                 System.out.print("Depth in Decimal Feet: ");
-                setDepthInDecFeet(Double.parseDouble(br.readLine()));
+                this.setDepthInDecFeet(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
 		while (true) {
             try {
                 System.out.print("Clearance in Decimal Feet: ");
-                setClearanceInDecFeet(Double.parseDouble(br.readLine()));
+                this.setClearanceInDecFeet(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
 		System.out.print("Notes: ");
-		bA.setNotes(br.readLine());
+		this.bA.setNotes(br.readLine());
 		}
-	public void displayDepthMethods(String[] x) {
-		for(int i = 0; i < x.length; i++) {
-			System.out.println(x[i]);
-		}
-	}
-	
+
 }

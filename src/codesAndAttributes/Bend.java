@@ -1,5 +1,5 @@
 /*
- *	This class is used for two kinds of Bends. Sags and Over bends both. 
+ *	This class is used for all bends.Included are Sags, Overbends and PI's.
  **/
 package codesAndAttributes;
 import java.io.BufferedReader;
@@ -14,74 +14,67 @@ public class Bend extends BasicAttributes {
 		
 	// Creating a instance of the Basic Attributes Class here.
 	BasicAttributes bA = new BasicAttributes();
-	
-	private String type;
-	private String kind;	
-	private double degree;
-	
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public double getDegree() {
-		return degree;
-	}
-	public void setDegree(double degree) {
-		this.degree = degree;
-	}
-	public String getKind() {
-		return kind;
-	}
-	public void setKind(String kind) {
-		this.kind = kind;
-	}
-	
+
+    // Creating a instance of the Codes Class here.
+    private Codes codes = new Codes();
+
+    private void setBendType() {
+    }
+
+    private void setBendDirection() {
+    }
+
+    private void setDegree(Double degree) {
+        Double degree1 = degree;
+    }
+
+    // Collecting all data for the Bend.
 	public void bendDataCollect() throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                //System.out.println("Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Sag or Overbend? ");
-		setKind(br.readLine());
-		System.out.print("Enter the Type: \n");
-		bA.displayCertainTypes(bA.bendTypes);
+		System.out.print("Enter the Type of Bend: ");
+        codes.displayCodesAndTypes(codes.bendTypes);
+		this.setBendType();
+		System.out.print("Bend Direction: \n");
+        codes.displayCodesAndTypes(codes.bendDirections);
 		System.out.print(": ");
-		setType(br.readLine());
+		this.setBendDirection();
         while (true) {
             try {
                 System.out.format("Enter the degree of the Bend: ");
-                setDegree(Double.parseDouble(br.readLine()));
+                this.setDegree(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
         while (true) {
             try {
                 System.out.print("Enter the Natural Ground shot for cover: ");
-                bA.setNgc(Integer.parseInt(br.readLine()));
+                this.setNgc(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
         while (true) {
             try {
                 System.out.print("Enter the Cover: ");
-                bA.setCover(Double.parseDouble(br.readLine()));
+                this.setCover(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
 		System.out.print("Notes: ");
-		bA.notes = br.readLine();
+		this.setNotes(br.readLine());
 	}
 }

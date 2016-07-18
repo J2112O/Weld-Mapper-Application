@@ -12,6 +12,8 @@ public class Weld extends BasicAttributes {
 	// Creating a new instance of the class Basic Attributes below.
 	BasicAttributes bA = new BasicAttributes();
 
+	Codes codes = new Codes();
+
 	private String weldType;
 	private String weldId;
 	private String pipeBack;
@@ -37,115 +39,115 @@ public class Weld extends BasicAttributes {
 	public String getWeldType() {
 		return weldType;
 	}
-	public void setWeldType(String weldType) {
+	private void setWeldType(String weldType) {
 		this.weldType = weldType;
 	}
 	public String getWeldId() {
 		return weldId;
 	}
-	public void setWeldId(String weldId) {
+	private void setWeldId(String weldId) {
 		this.weldId = weldId;
 	}
 	public String getPipeBack() {
 		return pipeBack;
 	}
-	public void setPipeBack(String pipeBack) {
+	private void setPipeBack(String pipeBack) {
 		this.pipeBack = pipeBack;
 	}
 	public String getPipeAhead() {
 		return pipeAhead;
 	}
-	public void setPipeAhead(String pipeAhead) {
+	private void setPipeAhead(String pipeAhead) {
 		this.pipeAhead = pipeAhead;
 	}
 	public String getHeatAhead() {
 		return heatAhead;
 	}
-	public void setHeatAhead(String heatAhead) {
+	private void setHeatAhead(String heatAhead) {
 		this.heatAhead = heatAhead;
 	}
-	public double getLengthAhead() {
+	private double getLengthAhead() {
 		return lengthAhead;
 	}
-	public void setLengthAhead(double lengthAhead) {
+	private void setLengthAhead(double lengthAhead) {
 		this.lengthAhead = lengthAhead;
 	}
-	public String getWallChange() {
+	private String getWallChange() {
 		return wallChange;
 	}
-	public void setWallChange(String wallChange) {
+	private void setWallChange(String wallChange) {
 		this.wallChange = wallChange;
 	}
 	public String getPipeLocation() {
 		return pipeLocation;
 	}
-	public void setPipeLocation(String pipeLocation) {
+	private void setPipeLocation(String pipeLocation) {
 		this.pipeLocation = pipeLocation;
 	}
 	public String getWelderInitials() {
 		return welderInitials;
 	}
-	public void setWelderInitials(String welderInitials) {
+	private void setWelderInitials(String welderInitials) {
 		this.welderInitials = welderInitials;
 	}
 
-	public void weldDataCollect() throws IOException {
+	void weldDataCollect() throws IOException {
 		while (true) {
 			try {
 				System.out.print("Enter the GPS Point for this Feature: ");
-				bA.setGpsShot(Integer.parseInt(br.readLine()));
+				this.setGpsShot(Integer.parseInt(br.readLine()));
 				break;
 			} catch (InputMismatchException | NumberFormatException ex) {
-				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+				System.out.println(codes.iIInt);
 			}
 		}
 		System.out.println("Enter the Weld Type.. ");
-		displayCertainTypes(bA.weldTypes);
+        codes.displayCodesAndTypes(codes.weldTypes);
 		System.out.print(": ");
-		setWeldType(br.readLine());
+		this.setWeldType(br.readLine());
 		System.out.print("Enter the Weld ID (X-Ray Number): ");
-		setWeldId(br.readLine());
+		this.setWeldId(br.readLine());
 		System.out.print("Enter the Pipe (Name or ID) back: ");
-		setPipeBack(br.readLine());
+		this.setPipeBack(br.readLine());
 		System.out.print("Enter the Pipe (Name or ID) ahead: ");
-		setPipeAhead(br.readLine());
+		this.setPipeAhead(br.readLine());
 		System.out.print("Enter the Heat ahead: ");
-		setHeatAhead(br.readLine());
+		this.setHeatAhead(br.readLine());
 		while (true) {
             try {
                 System.out.print("Enter the Length ahead: ");
-                setLengthAhead(Double.parseDouble(br.readLine()));
+                this.setLengthAhead(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
         while (true) {
 			try {
                 System.out.print("Enter the Natural Ground shot for cover: ");
-                bA.setNgc(Integer.parseInt(br.readLine()));
+                this.setNgc(Integer.parseInt(br.readLine()));
 				break;
 			} catch (InputMismatchException | NumberFormatException ex) {
-				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+				System.out.println(codes.iIInt);
 			}
 		}
         while (true) {
 			try {
                 System.out.print("Enter the Cover: ");
-                bA.setCover(Double.parseDouble(br.readLine()));
+                this.setCover(Double.parseDouble(br.readLine()));
 				break;
 			} catch (InputMismatchException | NumberFormatException ex) {
-				System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+				System.out.println(codes.iIDbl);
 			}
 		}
 		System.out.print("Wall change? (Yes or No) ");
-		setWallChange(br.readLine());
+		this.setWallChange(br.readLine());
 		System.out.print("Pipe in ditch (Yes or No): ");
-		setPipeLocation(br.readLine());
+		this.setPipeLocation(br.readLine());
 		System.out.println("Welder initials: ");
-		setWelderInitials(br.readLine());
+		this.setWelderInitials(br.readLine());
 		System.out.print("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 		System.out.print("Do you have any pipe to Tally for this Weld? ");
 		response = br.readLine();
 		if(response.equalsIgnoreCase("yes")) {

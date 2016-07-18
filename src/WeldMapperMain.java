@@ -3,11 +3,13 @@ import java.util.Date;
 import java.io.*;
 import codesAndAttributes.*;
 
+
 public class WeldMapperMain {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new
 				InputStreamReader(System.in));
+
 
 		Date date = new Date();
 		ChoosingCodes cc = new ChoosingCodes();
@@ -21,5 +23,6 @@ public class WeldMapperMain {
         proceed = br.readLine();
         } 
         System.out.println("Thanks for using Weld Mapper.");
+
 	}
 }

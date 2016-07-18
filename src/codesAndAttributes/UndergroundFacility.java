@@ -11,7 +11,9 @@ public class UndergroundFacility extends BasicAttributes {
 			InputStreamReader(System.in));
 	//Creating an instance of the Basic Attributes Class
 	BasicAttributes bA = new BasicAttributes();
-		
+
+	Codes codes = new Codes();
+
 	private String shotLocation;
 	private String utilityType;
 	private double depthFromGround;
@@ -21,73 +23,75 @@ public class UndergroundFacility extends BasicAttributes {
 	public String getShotLocation() {
 		return shotLocation;
 	}
-	public void setShotLocation(String shotLocation) {
+	private void setShotLocation(String shotLocation) {
 		this.shotLocation = shotLocation;
 	}
 	public String getUtilityType() {
 		return utilityType;
 	}
-	public void setUtilityType(String utilityType) {
+	private void setUtilityType(String utilityType) {
 		this.utilityType = utilityType;
 	}
 	public double getDepthFromGround() {
 		return depthFromGround;
 	}
-	public void setDepthFromGround(double depthFromGround) {
+	private void setDepthFromGround(double depthFromGround) {
 		this.depthFromGround = depthFromGround;
 	}
 	public double getClearanceFromPipe() {
 		return clearanceFromPipe;
 	}
-	public void setClearanceFromPipe(double clearanceFromPipe) {
+	private void setClearanceFromPipe(double clearanceFromPipe) {
 		this.clearanceFromPipe = clearanceFromPipe;
 	}
 	public String getPipelinePosition() {
 		return pipelinePosition;
 	}
-	public void setPipelinePosition(String pipelinePosition) {
+	private void setPipelinePosition(String pipelinePosition) {
 		this.pipelinePosition = pipelinePosition;
 	}
 	
-	public void undergroundFacilityDataCollect() throws IOException {
+	void undergroundFacilityDataCollect() throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.println("Enter the Shot Location: \n");
-		bA.displayCertainTypes(locations);
+        codes.displayCodesAndTypes(codes.shotLocations);
 		System.out.print(": ");
-		setShotLocation(br.readLine());
+		this.setShotLocation(br.readLine());
 		System.out.println("Enter the Underground Facility Type: \n");
-		bA.displayCertainTypes(utilityTypes);
+        codes.displayCodesAndTypes(codes.utilityTypes);
 		System.out.print(": ");
-		setUtilityType(br.readLine());
+		this.setUtilityType(br.readLine());
 		while (true) {
             try {
 				System.out.println("Depth from Ground: ");
-				setDepthFromGround(Double.parseDouble(br.readLine()));
+				this.setDepthFromGround(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
 		while (true) {
             try {
                 System.out.println("Clearance from Pipeline: ");
-                setClearanceFromPipe(Double.parseDouble(br.readLine()));
+                this.setClearanceFromPipe(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
-		System.out.println("As-built Pipeline: (Above, Below, Other(See Notes) )");
-		setPipelinePosition(br.readLine());
+		System.out.println("As-built Pipeline: ");
+        codes.displayCodesAndTypes(codes.shotPositions);
+        System.out.print(": ");
+        this.setPipelinePosition(br.readLine());
 		System.out.println("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 	}
 }

@@ -8,6 +8,8 @@ public class NaturalGround extends BasicAttributes {
 
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
+	Codes codes = new Codes();
+
 	// Creating an instance of the Basic Attributes class
 	BasicAttributes bA = new BasicAttributes();
 	private int naturalGround;
@@ -15,14 +17,14 @@ public class NaturalGround extends BasicAttributes {
 	public int getNaturalGround() {
 		return naturalGround;
 	}
-	public void setNaturalGround(int naturalGround) {
+	private void setNaturalGround(int naturalGround) {
 		this.naturalGround = naturalGround;
 	}
 	
-	public void naturalGroundDataCollect() throws IOException {
+	void naturalGroundDataCollect() throws IOException {
  		System.out.println("Enter the GPS Point for this Feature: ");
-		setNaturalGround(Integer.parseInt(br.readLine()));
+		this.setNaturalGround(Integer.parseInt(br.readLine()));
 		System.out.print("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 	}
 }

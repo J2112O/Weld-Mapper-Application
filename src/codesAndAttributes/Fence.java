@@ -12,11 +12,9 @@ public class Fence extends BasicAttributes {
 	
 	// Creating and instance of BasicAttributes Class
 	BasicAttributes bA = new BasicAttributes();
-	
-	// An Array of the fence types
-	private String[] fenceTypes = {"BARBWIRE","CHAINLINK","CHAINLINK W/BARB","CHICKEN WIRE",
-			"ELECTRIC","HOT WIRE","METAL","PIPE","PLASTIC","ROCK","STEEL CABLE","WOOD"};
-	
+
+    Codes codes = new Codes();
+
 	private String type;
 	private String shotLocation;
 	private double height;
@@ -25,68 +23,65 @@ public class Fence extends BasicAttributes {
 	public String getType() {
 		return type;
 	}
-	public void setType(String type) {
+	private void setType(String type) {
 		this.type = type;
 	}
 	public String getShotLocation() {
 		return shotLocation;
 	}
-	public void setShotLocation(String shotLocation) {
+	private void setShotLocation(String shotLocation) {
 		this.shotLocation = shotLocation;
 	}
 	public double getHeight() {
 		return height;
 	}
-	public void setHeight(double height) {
+	private void setHeight(double height) {
 		this.height = height;
 	}
 	public int getStrandCount() {
 		return strandCount;
 	}
-	public void setStrandCount(int strandCount) {
+	private void setStrandCount(int strandCount) {
 		this.strandCount = strandCount;
 	}
-	public void displayFenceTypes(String[] x) {
-		for(int i = 0; i < x.length; i++) {
-			System.out.println(x[i]);
-		}
-	}
-	public void fenceDataCollect() throws NumberFormatException, IOException {
+
+	void fenceDataCollect() throws NumberFormatException, IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.bA.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.print("Enter the Type of Fence.. \n");
-		displayFenceTypes(fenceTypes);
+		codes.displayCodesAndTypes(codes.fenceTypes);
 		System.out.print(": ");
-		setType(br.readLine());
-		System.out.print("Shot location (Corner, Post, In Line, In Line(Meandering)): ");
-		setShotLocation(br.readLine());
+		this.setType(br.readLine());
+		System.out.print("Shot location: \n");
+		codes.displayCodesAndTypes(codes.fncShotLocations);
+		this.setShotLocation(br.readLine());
 		while (true) {
             try {
 				System.out.print("Enter the height of the fence: ");
-				setHeight(Double.parseDouble(br.readLine()));
+				this.setHeight(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Decimal numbers only. No words or whole numbers.");
+                System.out.println(codes.iIDbl);
             }
         }
         while (true) {
             try {
                 System.out.print("Enter the strand count: ");
-                setStrandCount(Integer.parseInt(br.readLine()));
+                this.setStrandCount(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.print("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 				
 	}
 }

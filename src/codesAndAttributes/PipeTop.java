@@ -11,18 +11,19 @@ public class PipeTop extends BasicAttributes {
 			InputStreamReader(System.in));
 	//Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
-	
-	public void pipeTopDataCollect() throws NumberFormatException, IOException {
+
+	Codes codes = new Codes();
+	void pipeTopDataCollect() throws NumberFormatException, IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.println("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 	}
 }

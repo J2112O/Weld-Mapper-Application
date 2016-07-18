@@ -11,33 +11,34 @@ public class TrenchBreaker extends BasicAttributes {
 			InputStreamReader(System.in));
 	// Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
-	
+
+	Codes codes = new Codes();
 	private String type;
 
 	public String getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	private void setType(String type) {
 		this.type = type;
 	}
 	
-	public void trenchBreakerDataCollect() throws IOException {
+	void trenchBreakerDataCollect() throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
-                bA.setGpsShot(Integer.parseInt(br.readLine()));
+                this.setGpsShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
-                System.out.println("**ERROR** Whole numbers only. No words or decimals.");
+                System.out.println(codes.iIInt);
             }
         }
 		System.out.println("Enter the Type: \n");
-		bA.displayCertainTypes(trenchbrkrTypes);
+        codes.displayCodesAndTypes(codes.tbTypes);
 		System.out.println(": ");
-		setType(br.readLine());
+		this.setType(br.readLine());
 		System.out.println("Notes: ");
-		bA.setNotes(br.readLine());
+		this.setNotes(br.readLine());
 
 	}
 }
