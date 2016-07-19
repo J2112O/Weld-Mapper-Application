@@ -10,16 +10,13 @@ public class ChoosingCodes {
 	// Creating an instance of Buffer Reader
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
+
+	//Creating an instance of the below class
     Codes codes = new Codes();
+
+    // A variable to hold the user choice for which code to survey for.
     String codeChoice;
 
-/*	// Using this string to capture user input for the codes to collect data for
-	private String codeChoice;
-	// An array of the codes to choose from to collect data for
-	private String[] codes = {"BEND (SAG OR OVERBEND)","BORE WALL","CAD WELD","CENTERLINE OF..","COMBO BEND","EXISTING FACILITY",
-			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD FACILITY","PI (SIDEBEND)","PIPE TOP",
-			"PW (PIPE WEIGHTS)","ROCKSHIELD","TOP OF..","TRENCHBREAKER","UNDERGROUND FACILITY","VALVE","WELD"};
-			*/
 	// Creating instances of all the codes available to collect data for
 	Bend bend = new Bend();
 	BoreWall bW = new BoreWall();
@@ -40,18 +37,12 @@ public class ChoosingCodes {
 	Valve vlv = new Valve();
 	Weld weld = new Weld();
 	
-	/*public void displayCodes() {
-    	for(int i = 0; i < codes.length; i++) {
-        	System.out.println(codes[i]);
-        }
-    } */
-	
 	public void dataCollectingChoices() throws IOException {
 			// Getting the codes choice from the user here..
 			System.out.print("Enter the Code to collect data for: \n");
             codes.displayCodesAndTypes(codes.surveyCodes);
 			//displayCodes();
-			System.out.print(": ");
+			//System.out.print(": ");
 			codeChoice = br.readLine();
 			// Calling instances of the requested available codes
 			if (codeChoice.equalsIgnoreCase("bend")) {

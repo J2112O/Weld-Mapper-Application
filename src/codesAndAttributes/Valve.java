@@ -56,7 +56,7 @@ public class Valve extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Enter the position of this locate: ");
+		System.out.print("Enter the Position of this Locate: ");
         codes.displayCodesAndTypes(codes.valvePositions);
 		this.setPosition(br.readLine());
 		System.out.print("Enter the Valve ID: ");

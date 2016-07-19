@@ -73,7 +73,6 @@ public class Codes {
     void displayCodesAndTypes(String[] x) {
 		for (int i = 0; i < x.length; i++) {
 			System.out.println(x[i].toUpperCase());
-            return;
 		}
     }
 }

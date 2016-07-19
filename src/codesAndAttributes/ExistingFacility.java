@@ -87,7 +87,7 @@ public class ExistingFacility extends BasicAttributes{
         }
 		System.out.print("Crossing proposed route? (Yes or No) ");
 		this.setCrossingProp(br.readLine());
-		System.out.print("Enter the Depth Method: \n");
+		System.out.print("Depth Method: \n");
         codes.displayCodesAndTypes(codes.depthMethods);
 		System.out.print(": ");
 		this.setDepthMethod(br.readLine());

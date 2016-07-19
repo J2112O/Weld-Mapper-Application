@@ -35,7 +35,7 @@ public class TopOf extends BasicAttributes{
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Enter the Top Of feature: \n");
+		System.out.print("Enter the Top Of Feature: \n");
         codes.displayCodesAndTypes(codes.tops);
 		System.out.print(": ");
 		this.setTopPosition(br.readLine());

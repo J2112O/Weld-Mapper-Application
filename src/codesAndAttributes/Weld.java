@@ -2,8 +2,10 @@
  *	This package captures all the information for each weld 
  */
 package codesAndAttributes;
+import java.awt.datatransfer.StringSelection;
 import java.io.*;
 import java.util.InputMismatchException;
+import java.util.StringTokenizer;
 
 public class Weld extends BasicAttributes {
 	
@@ -22,6 +24,7 @@ public class Weld extends BasicAttributes {
 	private double lengthAhead;
 	private String wallChange;
 	private String pipeLocation;
+	private double weldWallThickness;
 	private String welderInitials;
 	// These variables are for the pipe tally/cuts method
 	private String parentPipe;
@@ -75,8 +78,9 @@ public class Weld extends BasicAttributes {
 	private String getWallChange() {
 		return wallChange;
 	}
-	private void setWallChange(String wallChange) {
+	private String setWallChange(String wallChange) {
 		this.wallChange = wallChange;
+        return wallChange;
 	}
 	public String getPipeLocation() {
 		return pipeLocation;
@@ -101,7 +105,7 @@ public class Weld extends BasicAttributes {
 				System.out.println(codes.iIInt);
 			}
 		}
-		System.out.println("Enter the Weld Type.. ");
+		System.out.println("Type of Weld being Collected: ");
         codes.displayCodesAndTypes(codes.weldTypes);
 		System.out.print(": ");
 		this.setWeldType(br.readLine());
@@ -141,14 +145,26 @@ public class Weld extends BasicAttributes {
 			}
 		}
 		System.out.print("Wall change? (Yes or No) ");
-		this.setWallChange(br.readLine());
+		// Using the below to capture the wall thickness, if there is a change.
+        String result = this.setWallChange(br.readLine());
+        if (result.equalsIgnoreCase("yes")) {
+            while (true) {
+                try {
+                    System.out.print("Enter the Wall Thickness Change: ");
+                    this.weldWallThickness(Double.parseDouble(br.readLine()));
+                    break;
+                } catch (InputMismatchException | NumberFormatException ex) {
+                    System.out.println(codes.iIDbl);
+                }
+            }
+        }
 		System.out.print("Pipe in ditch (Yes or No): ");
 		this.setPipeLocation(br.readLine());
 		System.out.println("Welder initials: ");
 		this.setWelderInitials(br.readLine());
 		System.out.print("Notes: ");
 		this.setNotes(br.readLine());
-		System.out.print("Do you have any pipe to Tally for this Weld? ");
+		System.out.print("Do you have any pipe to Tally cuts on for this Weld? ");
 		response = br.readLine();
 		if(response.equalsIgnoreCase("yes")) {
 			tallyDataCollect();
@@ -158,60 +174,65 @@ public class Weld extends BasicAttributes {
 		}
 
 	}
-	public String getParentPipe() {
+
+    private void weldWallThickness(double v) {
+    }
+
+    public String getParentPipe() {
 		return parentPipe;
 	}
-	public void setParentPipe(String parentPipe) {
+	private void setParentPipe(String parentPipe) {
 		this.parentPipe = parentPipe;
 	}
 	public String getPipeJoint() {
 		return pipeJoint;
 	}
-	public void setPipeJoint(String pipeJoint) {
+	private void setPipeJoint(String pipeJoint) {
 		this.pipeJoint = pipeJoint;
 	}
 	public int getPipeHeat() {
 		return pipeHeat;
 	}
-	public void setPipeHeat(int pipeHeat) {
+	private void setPipeHeat(int pipeHeat) {
 		this.pipeHeat = pipeHeat;
 	}
 	public double getPipeLength() {
 		return pipeLength;
 	}
-	public void setPipeLength(double pipeLength) {
+	private void setPipeLength(double pipeLength) {
 		this.pipeLength = pipeLength;
 	}
 	public double getCutLength() {
 		return cutLength;
 	}
-	public void setCutLength(double cutLength) {
+	private void setCutLength(double cutLength) {
 		this.cutLength = cutLength;
 	}
 	public String getPipeMaker() {
 		return pipeMaker;
 	}
-	public void setPipeMaker(String pipeMaker) {
+	private void setPipeMaker(String pipeMaker) {
 		this.pipeMaker = pipeMaker;
 	}
 	public String getCoatingType() {
 		return coatingType;
 	}
-	public void setCoatingType(String coatingType) {
+	private void setCoatingType(String coatingType) {
 		this.coatingType = coatingType;
 	}
 	public String getCoatingThickness() {
 		return coatingThickness;
 	}
-	public void setCoatingThickness(String coatingThickness) {
+	private void setCoatingThickness(String coatingThickness) {
 		this.coatingThickness = coatingThickness;
 	}
 	public double getWallThickness() {
 		return wallThickness;
 	}
-	public void setWallThickness(double wallThickness) {
+	private void setWallThickness(double wallThickness) {
 		this.wallThickness = wallThickness;
 	}
+	private String pipePupName;
 	public String getResponse() {
 		return response;
 	}
@@ -219,26 +240,43 @@ public class Weld extends BasicAttributes {
 		this.response = response;
 	}
 	
-	public void tallyDataCollect() throws IOException {
-		System.out.print("Enter the Parent Pipe name or ID: ");
+	private void tallyDataCollect() throws IOException {
+		System.out.print("Parent Pipe Name or ID: ");
 		setParentPipe(br.readLine());
-		System.out.print("Enter the Parent Pipe Joint Number: ");
+		System.out.print("Parent Pipe Joint Number: ");
 		setPipeJoint(br.readLine());
-		System.out.print("Enter the Parent Pipe's Heat Number: ");
+		System.out.print("Parent Pipe's Heat Number: ");
 		setPipeHeat(Integer.parseInt(br.readLine()));
-		System.out.print("Enter the Parent Pipe's Original Length: ");
+		System.out.print("Parent Pipe's Original Length: ");
 		setPipeLength(Double.parseDouble(br.readLine()));
-		System.out.print("Enter the Length of the cut made to the Parent Pipe: ");
+		System.out.print("Length of cut made to the Parent Pipe: ");
 		setCutLength(Double.parseDouble(br.readLine()));
-		System.out.print("Enter the Parent Pipe's Manufacturer: ");
+		System.out.print("Parent Pipe's Manufacturer: ");
 		setPipeMaker(br.readLine());
-		System.out.print("Enter the Parent Pipe's Coating Type: ");
+		System.out.print("Parent Pipe's Coating Type: ");
 		setCoatingType(br.readLine());
-		System.out.print("Enter the Parent Pipe's Coating Thickness: ");
+		System.out.print("Parent Pipe's Coating Thickness: ");
 		setCoatingThickness(br.readLine());
-		System.out.print("Enter the Parent Pipe's Wall Thickness: ");
+		System.out.print("Parent Pipe's Wall Thickness: ");
 		setWallThickness(Double.parseDouble(br.readLine()));
+        System.out.print("New Pup Pipe ID: ");
+        setPipePupName(br.readLine());
 	}
-	
-	
+
+
+    public double getWeldWallThickness() {
+        return weldWallThickness;
+    }
+
+    public void setWeldWallThickness(double weldWallThickness) {
+        this.weldWallThickness = weldWallThickness;
+    }
+
+    public String getPipePupName() {
+        return pipePupName;
+    }
+
+    public void setPipePupName(String pipePupName) {
+        this.pipePupName = pipePupName;
+    }
 }

@@ -44,7 +44,7 @@ public class ComboBend extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Enter the Bend Type: \n");
+		System.out.print("Type of Bend: \n");
         codes.displayCodesAndTypes(codes.bendTypes);
 		System.out.print(": ");
 		setBendType();
@@ -76,7 +76,7 @@ public class ComboBend extends BasicAttributes {
         }
 		while (true) {
             try {
-                System.out.print("Enter the Natural Ground for Cover Shot: ");
+                System.out.print("Natural Ground for Cover Shot: ");
                 this.setNgc(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
@@ -85,7 +85,7 @@ public class ComboBend extends BasicAttributes {
         }
         while (true) {
             try {
-                System.out.print("Enter the Cover: ");
+                System.out.print("Cover: ");
                 this.setCover(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {

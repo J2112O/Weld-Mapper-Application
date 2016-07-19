@@ -8,7 +8,8 @@ import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 
 public class Bend extends BasicAttributes {
-	
+
+    // Calling to capture user input
 	BufferedReader br = new BufferedReader(new
 				InputStreamReader(System.in));
 		
@@ -40,7 +41,7 @@ public class Bend extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Enter the Type of Bend: ");
+		System.out.print("Type of Bend: ");
         codes.displayCodesAndTypes(codes.bendTypes);
 		this.setBendType();
 		System.out.print("Bend Direction: \n");
@@ -49,7 +50,7 @@ public class Bend extends BasicAttributes {
 		this.setBendDirection();
         while (true) {
             try {
-                System.out.format("Enter the degree of the Bend: ");
+                System.out.format("Degree of the Bend: ");
                 this.setDegree(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
@@ -58,7 +59,7 @@ public class Bend extends BasicAttributes {
         }
         while (true) {
             try {
-                System.out.print("Enter the Natural Ground shot for cover: ");
+                System.out.print("Natural Ground shot for cover: ");
                 this.setNgc(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
@@ -67,7 +68,7 @@ public class Bend extends BasicAttributes {
         }
         while (true) {
             try {
-                System.out.print("Enter the Cover: ");
+                System.out.print("Cover: ");
                 this.setCover(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {

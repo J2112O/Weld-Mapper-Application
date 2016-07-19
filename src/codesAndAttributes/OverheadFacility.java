@@ -49,7 +49,7 @@ public class OverheadFacility extends BasicAttributes {
         }
 		while (true) {
             try {
-				System.out.println("Enter the wire count for the Overhead Facility: ");
+				System.out.println("Enter the Wire Count for the Overhead Facility: ");
 				this.setWireCount(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
@@ -65,7 +65,7 @@ public class OverheadFacility extends BasicAttributes {
                 System.out.println(codes.iIDbl);
             }
         }
-	 	System.out.println("Is it a Transmission line? (Yes or No): ");
+	 	System.out.println("Transmission line? (Yes or No): ");
 		this.setType(br.readLine());
 		System.out.println("Notes: ");
 		this.setNotes(br.readLine());

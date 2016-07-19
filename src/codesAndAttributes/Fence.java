@@ -55,7 +55,7 @@ public class Fence extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Enter the Type of Fence.. \n");
+		System.out.print("Type of Fence.. \n");
 		codes.displayCodesAndTypes(codes.fenceTypes);
 		System.out.print(": ");
 		this.setType(br.readLine());
@@ -64,7 +64,7 @@ public class Fence extends BasicAttributes {
 		this.setShotLocation(br.readLine());
 		while (true) {
             try {
-				System.out.print("Enter the height of the fence: ");
+				System.out.print("Enter the Height of the fence: ");
 				this.setHeight(Double.parseDouble(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
@@ -73,7 +73,7 @@ public class Fence extends BasicAttributes {
         }
         while (true) {
             try {
-                System.out.print("Enter the strand count: ");
+                System.out.print("Enter the Strand count: ");
                 this.setStrandCount(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
