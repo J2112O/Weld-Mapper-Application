@@ -77,6 +77,20 @@ public class WorkAndTaskSetup {
         this.section = section;
     }
 
+    public String getFlowline() {
+        return flowline;
+    }
+    public void setFlowline(String flowline) {
+        this.flowline = flowline;
+    }
+
+    public String getCoordSystem() {
+        return coordSystem;
+    }
+    public void setCoordSystem(String coordSystem) {
+        this.coordSystem = coordSystem;
+    }
+
     public String fileName;
     public String bookName;
     public String county;
@@ -85,6 +99,9 @@ public class WorkAndTaskSetup {
     public String townShip;
     public String townshipRange;
     public int section;
+    public String flowline;
+    public String coordSystem;
+
 
     public void collectTaskSetup() throws IOException {
 
@@ -92,12 +109,10 @@ public class WorkAndTaskSetup {
         this.setFileName(br.readLine());
         System.out.print("Book Name: ");
         this.setBookName(br.readLine());
-        System.out.print("County: ");
+        System.out.print("County or Parish: ");
         this.setCounty(br.readLine());
         System.out.print("State: ");
         this.setState(br.readLine());
-        System.out.print("Work Location: ");
-        this.setWorkLocation(br.readLine());
         System.out.print("Township: ");
         this.setTownShip(br.readLine());
         System.out.print("Range: ");
@@ -111,5 +126,11 @@ public class WorkAndTaskSetup {
                 System.out.println("Whole Numbers Only. No Words or Decimals. ");
             }
         }
+        System.out.print("Work Location or Description of Area: ");
+        this.setWorkLocation(br.readLine());
+        System.out.println("Flow-line Description (From Direction - To Direction): ");
+        this.setFlowline(br.readLine());
+        System.out.println("Coordinate System: ");
+        this.setCoordSystem(br.readLine());
     }
 }

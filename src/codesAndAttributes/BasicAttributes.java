@@ -7,34 +7,33 @@ package codesAndAttributes;
 @SuppressWarnings("WeakerAccess")
 public class BasicAttributes {
 
-    protected int gpsShot;
-	protected double cover;
-	protected int ngc;
-	protected String notes;
+    private int gpsShot;
+	private double cover;
+	private int existGradeShot;
+	private String notes;
 	
-	protected int getGpsShot() {
+	private int getGpsShot() {
 		return gpsShot;
 	}
-	protected void setGpsShot(int gpsShot) {
+	private void setGpsShot(int gpsShot) {
 		this.gpsShot = gpsShot;
 	}
-	protected double getCover() {
+	private double getCover() {
 		return cover;
 	}
-	protected void setCover(double cover) {
+	private void setCover(double cover) {
 		this.cover = cover;
 	}
-	protected int getNgc() {
-		return ngc;
+	private int getExistGradeShot() {
+		return existGradeShot;
 	}
-	protected void setNgc(int ngc) {
-		this.ngc = ngc;
+	private void setExistGradeShot(int existGradeShot) {
+		this.existGradeShot = existGradeShot;
 	}
-	protected String getNotes() {
+	private String getNotes() {
 		return notes;
 	}
-	protected void setNotes(String notes) {
+	private void setNotes(String notes) {
 		this.notes = notes;
 	}
-	
-	}
+}

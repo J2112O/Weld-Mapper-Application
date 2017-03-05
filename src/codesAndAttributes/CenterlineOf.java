@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 public class CenterlineOf extends BasicAttributes {
 	
@@ -18,10 +20,11 @@ public class CenterlineOf extends BasicAttributes {
 	// Creating an instance of the Codes class
     Codes codes = new Codes();
 
-    private void setClPosition() {
+    private String clPosition;
+    private void setClPosition(String s) {
     }
 	
-	void centerLineDataCollect() throws NumberFormatException, IOException {
+	void centerLineDataCollect(MongoCollection<Document> x) throws NumberFormatException, IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
@@ -34,8 +37,15 @@ public class CenterlineOf extends BasicAttributes {
 		System.out.print("Enter the Centerline Of feature: \n");
         codes.displayCodesAndTypes(codes.centers);
 		System.out.print(": ");
-		this.setClPosition();
+		this.setClPosition(br.readLine().toUpperCase());
 		System.out.print("Notes: ");
-		this.setNotes(br.readLine());
+		this.setNotes(br.readLine().toUpperCase());
+
+		Document document = new Document()
+				.append("GPS Point", gpsShot)
+				.append("Centerline of Feature", clPosition)
+				.append("Notes", notes);
+
+		x.insertOne(document);
 	}
 }

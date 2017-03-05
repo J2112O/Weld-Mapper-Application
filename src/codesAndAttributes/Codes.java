@@ -7,7 +7,7 @@ package codesAndAttributes;
 public class Codes {
 	// An Array of Survey Data Code Choices for collecting Survey Data
 	protected String[] surveyCodes = {"BEND","BORE WALL","CAD WELD","CENTER-LINE","COMBO BEND","EXISTING-FACILITY",
-			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD-FACILITY","PI(SIDEBEND)","PIPE-TOP",
+			"FENCE","LOOSE END","NATURAL GROUND","OVERHEAD-FACILITY","PI","PIPE-TOP",
 			"PIPE WEIGHTS","ROCKSHIELD","TOP OF","TRENCHBREAKER","UNDERGROUND UTILITY","VALVE","WELD"};
 
 	// An Array of depth methods

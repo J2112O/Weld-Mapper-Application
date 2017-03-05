@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 public class Bend extends BasicAttributes {
 
@@ -19,10 +21,13 @@ public class Bend extends BasicAttributes {
     // Creating a instance of the Codes Class here.
     private Codes codes = new Codes();
 
-    private void setBendType() {
+    private String bendType;
+    private String bendDirection;
+    private Double degree;
+    private void setBendType(String s) {
     }
 
-    private void setBendDirection() {
+    private void setBendDirection(String s) {
     }
 
     private void setDegree(Double degree) {
@@ -30,7 +35,7 @@ public class Bend extends BasicAttributes {
     }
 
     // Collecting all data for the Bend.
-	public void bendDataCollect() throws IOException {
+	public void bendDataCollect(MongoCollection<Document> x) throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
@@ -41,13 +46,12 @@ public class Bend extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.print("Type of Bend: ");
+		System.out.print("Type of Bend: \n");
         codes.displayCodesAndTypes(codes.bendTypes);
-		this.setBendType();
+		this.setBendType(br.readLine().toUpperCase());
 		System.out.print("Bend Direction: \n");
         codes.displayCodesAndTypes(codes.bendDirections);
-		System.out.print(": ");
-		this.setBendDirection();
+		this.setBendDirection(br.readLine().toUpperCase());
         while (true) {
             try {
                 System.out.format("Degree of the Bend: ");
@@ -60,7 +64,7 @@ public class Bend extends BasicAttributes {
         while (true) {
             try {
                 System.out.print("Natural Ground shot for cover: ");
-                this.setNgc(Integer.parseInt(br.readLine()));
+                this.setExistGradeShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
                 System.out.println(codes.iIInt);
@@ -76,6 +80,18 @@ public class Bend extends BasicAttributes {
             }
         }
 		System.out.print("Notes: ");
-		this.setNotes(br.readLine());
+		this.setNotes(br.readLine().toUpperCase());
+
+        // Creating a Bend document
+        Document document = new Document()
+                .append("GPS Point", gpsShot)
+                .append("Bend Type", bendType)
+                .append("Bend Direction", bendDirection)
+                .append("Degree", degree)
+                .append("NGC", existGradeShot)
+                .append("Cover", cover)
+                .append("Notes", notes);
+
+        x.insertOne(document);
 	}
 }

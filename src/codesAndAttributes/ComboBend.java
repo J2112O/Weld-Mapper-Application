@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 public class ComboBend extends BasicAttributes {
 	
@@ -18,6 +20,12 @@ public class ComboBend extends BasicAttributes {
 	// Creating a instance of the Codes Class here.
 	private Codes codes = new Codes();
 
+
+    private String bendType;
+    private String direction1;
+    private Double degree1;
+    private String direction2;
+    private Double degree2;
 
     private void setBendType() {
     }
@@ -34,7 +42,7 @@ public class ComboBend extends BasicAttributes {
     private void setDegree2() {
     }
 
-	void comboDataCollect() throws IOException {
+	void comboDataCollect(MongoCollection<Document> x) throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
@@ -47,7 +55,7 @@ public class ComboBend extends BasicAttributes {
 		System.out.print("Type of Bend: \n");
         codes.displayCodesAndTypes(codes.bendTypes);
 		System.out.print(": ");
-		setBendType();
+		setBendType(br.readLine());
 		System.out.print("Direction 1: \n");
         codes.displayCodesAndTypes(codes.bendDirections);
 		System.out.println(": ");
@@ -77,7 +85,7 @@ public class ComboBend extends BasicAttributes {
 		while (true) {
             try {
                 System.out.print("Natural Ground for Cover Shot: ");
-                this.setNgc(Integer.parseInt(br.readLine()));
+                this.setExistGradeShot(Integer.parseInt(br.readLine()));
                 break;
             } catch (InputMismatchException | NumberFormatException ex) {
                 System.out.println(codes.iIInt);
@@ -94,6 +102,16 @@ public class ComboBend extends BasicAttributes {
         }
 		System.out.println("Notes: ");
 		this.setNotes(br.readLine());
-	
+
+        Document document = new Document()
+                .append("GPS Point", gpsShot)
+                .append("Bend Type", bendType)
+                .append("Direction 1", direction1)
+                .append("Degree 1", degree1)
+                .append("Direction 2", direction2)
+                .append("Degree 2", degree2)
+                .append("NGC", existGradeShot)
+                .append("Cover", cover)
+                .append("Notes", notes);
 	}
 }

@@ -14,7 +14,11 @@ public class WeldMapperMain {
 		Date date = new Date();
         // Creating an instance of this class to display all survey codes
 		ChoosingCodes cc = new ChoosingCodes();
+        // Creating an instance of the WorkAndTaskSetup class
+        WorkAndTaskSetup wk = new WorkAndTaskSetup();
 
+        // Calling the collectTaskSetup Method
+        wk.collectTaskSetup();
 
         System.out.println("Do you wish to collect Data? ");
         String proceed = br.readLine();
