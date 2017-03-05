@@ -1,7 +1,7 @@
 /* 
  * Using this class to capture what code the user wants to collect data for 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.IOException;
 import java.io.*;
 

@@ -1,7 +1,7 @@
 
 import java.util.Date;
 import java.io.*;
-import codesAndAttributes.*;
+import surveyCodes.*;
 
 
 public class WeldMapperMain {

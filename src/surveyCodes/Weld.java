@@ -1,7 +1,7 @@
 /*
  *	This package captures all the information for each weld 
  */
-package codesAndAttributes;
+package surveyCodes;
 
 public class Weld extends BasicAttributes {
 	

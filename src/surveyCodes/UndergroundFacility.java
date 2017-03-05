@@ -1,7 +1,7 @@
 /*
  * This class captures all Underground Facility data 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

@@ -1,7 +1,7 @@
 /*
  * Captures the Natural Ground Shot 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 
 public class NaturalGround extends BasicAttributes {

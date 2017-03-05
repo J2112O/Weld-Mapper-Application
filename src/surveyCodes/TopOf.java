@@ -1,7 +1,7 @@
 /*
  * This class captures the top of feature 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

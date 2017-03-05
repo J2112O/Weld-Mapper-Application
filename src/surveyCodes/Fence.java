@@ -1,7 +1,7 @@
 /*
  * This class captures existing Fence crossings. 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

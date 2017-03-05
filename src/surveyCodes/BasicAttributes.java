@@ -2,7 +2,7 @@
 * This class contains many shared basic attributes that the majority of
 * Survey Codes have.
 */
-package codesAndAttributes;
+package surveyCodes;
 
 @SuppressWarnings("WeakerAccess")
 public class BasicAttributes {

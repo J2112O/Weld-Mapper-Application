@@ -1,7 +1,7 @@
 /*
  * This class captures data for any Pipe Weights 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

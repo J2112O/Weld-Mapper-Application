@@ -1,7 +1,7 @@
 /*
  * This class captures Overhead Power Lines 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

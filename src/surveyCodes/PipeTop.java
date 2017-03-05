@@ -1,29 +1,19 @@
 /*
- * This Class captures Rock Shield data 
+ * This class essentially captures a top of pipe shot  
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 
-public class RockShield extends BasicAttributes {
+public class PipeTop extends BasicAttributes {
 
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
-	// Creating an instance of the Basic Attributes Class
+	//Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
 
 	Codes codes = new Codes();
-	private String position;
-
-	public String getPosition() {
-		return position;
-	}
-
-	private void setPosition(String position) {
-		this.position = position;
-	}
-	
-	void rockShieldDataCollect() throws IOException {
+	void pipeTopDataCollect() throws NumberFormatException, IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
@@ -33,10 +23,6 @@ public class RockShield extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
-		System.out.println("Position: \n");
-        codes.displayCodesAndTypes(codes.rsPositions);
-        System.out.println(": ");
-		this.setPosition(br.readLine());
 		System.out.println("Notes: ");
 		this.setNotes(br.readLine());
 	}

@@ -1,7 +1,7 @@
 /*
  * This class captures a small amount of Valve data. 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

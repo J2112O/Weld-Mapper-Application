@@ -1,7 +1,7 @@
 /*
  * Captures the loose end. 
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 

@@ -2,7 +2,7 @@
  * Listing out the code choices for data collection. This class also has various
  * types of things for attributes, many are shared by more than one survey code.
  */
-package codesAndAttributes;
+package surveyCodes;
 
 public class Codes {
 	// An Array of Survey Data Code Choices for collecting Survey Data

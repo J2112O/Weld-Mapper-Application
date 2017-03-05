@@ -1,19 +1,29 @@
 /*
- * This class essentially captures a top of pipe shot  
+ * This class captures Trench Breakers
  */
-package codesAndAttributes;
+package surveyCodes;
 import java.io.*;
 import java.util.InputMismatchException;
 
-public class PipeTop extends BasicAttributes {
+public class TrenchBreaker extends BasicAttributes {
 
 	BufferedReader br = new BufferedReader(new
 			InputStreamReader(System.in));
-	//Creating an instance of the Basic Attributes Class here
+	// Creating an instance of the Basic Attributes Class here
 	BasicAttributes bA = new BasicAttributes();
 
 	Codes codes = new Codes();
-	void pipeTopDataCollect() throws NumberFormatException, IOException {
+	private String type;
+
+	public String getType() {
+		return type;
+	}
+
+	private void setType(String type) {
+		this.type = type;
+	}
+	
+	void trenchBreakerDataCollect() throws IOException {
 		while (true) {
             try {
                 System.out.print("Enter the GPS Point for this Feature: ");
@@ -23,7 +33,12 @@ public class PipeTop extends BasicAttributes {
                 System.out.println(codes.iIInt);
             }
         }
+		System.out.println("Enter the Type: \n");
+        codes.displayCodesAndTypes(codes.tbTypes);
+		System.out.println(": ");
+		this.setType(br.readLine());
 		System.out.println("Notes: ");
 		this.setNotes(br.readLine());
+
 	}
 }
