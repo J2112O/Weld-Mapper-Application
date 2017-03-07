@@ -1,4 +1,7 @@
 package database;
+import surveyCodes.Bend;
+
+import javax.naming.Context;
 import java.sql.*;
 /**
  * This class takes care of all database functionality.
@@ -7,7 +10,8 @@ public class DbHelper {
 
     // Table creation here with these variables.
     private static final String CREATE_BASIC_ATS_TABLE = "CREATE TABLE IF NOT EXISTS " +DBCons.BASIC_ATS_TABLE+
-            " ("+DBCons.UID_BASIC_ATS+ "SERIAL INTEGER PRIMARY KEY NOT NULL, " +DBCons.GPS_SHOT+ "INTEGER NOT NULL, "
+            " ("+DBCons.UID_BASIC_ATS+ "SERIAL INTEGER PRIMARY KEY NOT NULL, " +DBCons.WHOLE_STATION+ "INTEGER NOT NULL, "
+            +DBCons.OFFSET_STATION+ "REAL NOT NULL, "+DBCons.GPS_SHOT+ "INTEGER NOT NULL, "
             +DBCons.EXISTING_GRADE_GPS+ "INTEGER NOT NULL, " +DBCons.COVER+ "REAL NOT NULL, " +DBCons.NOTES+
             "VARCHAR(25) DEFAULT 'N/A');";
 
@@ -27,10 +31,6 @@ public class DbHelper {
             "REAL NOT NULL, " + DBCons.WALL_CH+ "VARCHAR(10), " +DBCons.PIPE_LOC+ "VARCHAR(25), " +DBCons.WALL_THICK+
             "REAL DEFAULT 0.000, " +DBCons.WELDER_INITS+ "VARCHAR(25) DEFAULT N/A);";
 
-    // Insert operations here for the various attributes
-
-    private static final String INSERT_BASIC_ATTS = "INSERT INTO " +DBCons.BASIC_ATS_TABLE+ " ("+ DBCons.GPS_SHOT+","
-            +DBCons.EXISTING_GRADE_GPS+","+DBCons.COVER+","; //todo Incomplete for now. needs to be changed and completed.
 
     /**
      * @return a usable connection to the current database for use with other operations. ie: insert, update etc.
@@ -57,8 +57,8 @@ public class DbHelper {
      *                   operations.
      * @return true if all tables are created successfully. Otherwise false if not.
      */
-    private boolean createTables(Connection connection){
-        //Connection connectionToUse = connection;
+    public boolean createTables(Connection connection){
+
         Statement basicAttributesStatement = null;
         Statement bendTableStatement = null;
         Statement cmboBendTableStatement = null;
@@ -87,5 +87,41 @@ public class DbHelper {
         }
         System.out.println("All Tables Created Successfully.");
         return true;
+    }
+
+    /**
+     * @param connection Receives a live, working connection for database operation
+     * @param bend Is passed in an instance of the Bend Class.
+     *             This method inserts a bend into the database. (Sag, Overbend, PI (left or right))
+     */
+    public void insertBend(Connection connection, Bend bend) {
+        Statement basicInsertstm = null;
+        Statement bendInsertstm = null;
+        try {
+            connection.setAutoCommit(false);
+            basicInsertstm = connection.createStatement();
+            bendInsertstm = connection.createStatement();
+
+            String SQL_BASIC_ATTS_INSERT = "INSERT INTO " + DBCons.BASIC_ATS_TABLE + " (" + DBCons.WHOLE_STATION + ","
+                    + DBCons.OFFSET_STATION + "," + DBCons.GPS_SHOT + "," + DBCons.EXISTING_GRADE_GPS + "," + DBCons.COVER + ","
+                    + DBCons.NOTES + ") VALUES (" + bend.getWholeStationNum() + "," + bend.getOffsetStationNum() + ","
+                    + bend.getGpsShot() + "," + bend.getExistGradeShot() + "," + bend.getCover() + "," + bend.getNotes() + ");";
+            basicInsertstm.executeUpdate(SQL_BASIC_ATTS_INSERT);
+
+            String SQL_BEND_INSERT = "INSERT INTO " + DBCons.BEND_TABLE + " (" + DBCons.BEND_TYPE + "," + DBCons.BEND_KIND + ","
+                    + DBCons.BEND_DIR + "," + DBCons.DEGREE + ") VALUES (" + bend.getBendType() + "," + bend.getBendKind() + ","
+                    + bend.getBendDirection() + "," + bend.getDegree() + ");";
+            bendInsertstm.executeUpdate(SQL_BEND_INSERT);
+
+            basicInsertstm.close();
+            bendInsertstm.close();
+            connection.commit();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Records Inserted Successfully.");
     }
 }

@@ -4,10 +4,21 @@
 package surveyCodes;
 
 public class ComboBend extends Bend {
-	
+
+
+    private int id;
     private String direction2;
     private Double degree2;
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getDirection2() {
         return direction2;
     }

@@ -7,33 +7,57 @@ package surveyCodes;
 @SuppressWarnings("WeakerAccess")
 public class BasicAttributes {
 
+	private int id;
+    private int wholeStationNum;
+    private double offsetStationNum;
     private int gpsShot;
-	private double cover;
-	private int existGradeShot;
-	private String notes;
-	
-	private int getGpsShot() {
+    private double cover;
+    private int existGradeShot;
+    private String notes;
+
+    public int getWholeStationNum() {
+        return wholeStationNum;
+    }
+
+    public void setWholeStationNum(int wholeStationNum) {
+        this.wholeStationNum = wholeStationNum;
+    }
+
+    public double getOffsetStationNum() {
+        return offsetStationNum;
+    }
+
+    public void setOffsetStationNum(double offsetStationNum) {
+        this.offsetStationNum = offsetStationNum;
+    }
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getGpsShot() {
 		return gpsShot;
 	}
-	private void setGpsShot(int gpsShot) {
+	public void setGpsShot(int gpsShot) {
 		this.gpsShot = gpsShot;
 	}
-	private double getCover() {
+	public double getCover() {
 		return cover;
 	}
-	private void setCover(double cover) {
+	public void setCover(double cover) {
 		this.cover = cover;
 	}
-	private int getExistGradeShot() {
+	public int getExistGradeShot() {
 		return existGradeShot;
 	}
-	private void setExistGradeShot(int existGradeShot) {
+	public void setExistGradeShot(int existGradeShot) {
 		this.existGradeShot = existGradeShot;
 	}
-	private String getNotes() {
+	public String getNotes() {
 		return notes;
 	}
-	private void setNotes(String notes) {
+	public void setNotes(String notes) {
 		this.notes = notes;
 	}
 }

@@ -14,6 +14,8 @@ public class DBCons {
 
     // Basic Attributes Table column names
     public static final String UID_BASIC_ATS = "id";
+    public static final String WHOLE_STATION = "whole_station";
+    public static final String OFFSET_STATION = "off_station";
     public static final String GPS_SHOT = "gps_shot";
     public static final String EXISTING_GRADE_GPS = "existing_grade";
     public static final String COVER = "cover";

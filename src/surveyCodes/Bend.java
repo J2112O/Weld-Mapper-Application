@@ -5,10 +5,19 @@ package surveyCodes;
 
 public class Bend extends BasicAttributes {
 
+    private int id;
     private String bendType;
     private String bendKind;
     private String bendDirection;
     private Double degree;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getBendKind() {
         return bendKind;

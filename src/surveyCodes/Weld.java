@@ -4,7 +4,9 @@
 package surveyCodes;
 
 public class Weld extends BasicAttributes {
-	
+
+
+    private int id;
 	private String weldType;
 	private String weldId;
 	private String upstreamJoint;
@@ -16,6 +18,15 @@ public class Weld extends BasicAttributes {
 	private double weldWallThickness;
 	private String welderInitials;
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 	public String getWeldType() {
 		return weldType;
 	}
