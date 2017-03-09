@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
 
 public class CadWeld extends BasicAttributes {
 	

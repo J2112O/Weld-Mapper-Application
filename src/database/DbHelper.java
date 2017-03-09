@@ -37,7 +37,7 @@ public class DbHelper {
      * This method creates a connection to a database and returns usable connection for reuse should it connect
      * successfully.
      */
-    private Connection createConnection(){
+    public Connection createConnection(){
         Connection connection = null;
         try {
             Class.forName("org.postgresql.Driver");
@@ -124,4 +124,5 @@ public class DbHelper {
         }
         System.out.println("Records Inserted Successfully.");
     }
+
 }
