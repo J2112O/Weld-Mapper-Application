@@ -2,7 +2,7 @@ package utilites;
 
 /**
   *
- * This class is a helper class for dealing and using the linear referencing station number.
+ * This class is a helper class for working with and using the linear referencing station number.
  */
 
 public class StationNumberHelper {

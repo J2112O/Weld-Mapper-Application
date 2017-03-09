@@ -1,7 +1,6 @@
 package database;
+import surveyCodes.BasicAttributes;
 import surveyCodes.Bend;
-
-import javax.naming.Context;
 import java.sql.*;
 /**
  * This class takes care of all database functionality.
@@ -122,7 +121,37 @@ public class DbHelper {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        System.out.println("Records Inserted Successfully.");
+        System.out.println("Bend Inserted Successfully.");
+    }
+
+    /**
+     * @param connection Receives an active, live working connection for database activites
+     * @param attributes Recieves an instance of the BasicAttributes class
+     *                   This method inserts all of the BasicAttributes into the Basic Attributes table.
+     */
+    public void insertBasicAttributes(Connection connection, BasicAttributes attributes){
+
+        Statement basicInsertstm = null;
+        try {
+            connection.setAutoCommit(false);
+            basicInsertstm = connection.createStatement();
+
+            String SQL_BASIC_ATTS_INSERT = "INSERT INTO " + DBCons.BASIC_ATS_TABLE + " (" + DBCons.WHOLE_STATION + ","
+                    + DBCons.OFFSET_STATION + "," + DBCons.GPS_SHOT + "," + DBCons.EXISTING_GRADE_GPS + "," + DBCons.COVER + ","
+                    + DBCons.NOTES + ") VALUES (" + attributes.getWholeStationNum() + "," + attributes.getOffsetStationNum() + ","
+                    + attributes.getGpsShot() + "," + attributes.getExistGradeShot() + "," + attributes.getCover() + "," + attributes.getNotes() + ");";
+
+            basicInsertstm.executeUpdate(SQL_BASIC_ATTS_INSERT);
+
+            basicInsertstm.close();
+            connection.commit();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Common Attributes Inserted Successfully.");
     }
 
 }
