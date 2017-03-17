@@ -1,4 +1,4 @@
-package collectionActivites;
+package collectDataActivites;
 
 import database.DbHelper;
 import surveyCodes.BasicAttributes;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * and its method a more static helper to be called with every survey code collection and insert since they all share
  * these 'Common-Basic Attributes'
  */
-public class BasicAttributeCollection {
+public class BasicAttributeDataCollect {
 
     /**
      * @param scanner Receives an active scanner for capturing keyboard input.

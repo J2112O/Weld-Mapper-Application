@@ -1,4 +1,4 @@
-package collectionActivites;
+package collectDataActivites;
 
 /**
  * This class takes care of the client side collection and insertion for a Bend. (Sag, Overbend, PI (left or right))
@@ -9,9 +9,9 @@ import utilites.QuestionConstants;
 import java.sql.*;
 import java.util.Scanner;
 
-public class BendCollection {
+public class BendDataCollect {
 
-    private static final String TAG = "BendCollection.class";
+    private static final String TAG = "BendDataCollect.class";
     public void bendCollectionClassLogMethod() {
         System.out.println(TAG);
     }
@@ -40,7 +40,7 @@ public class BendCollection {
         mBend.setDegree(mDegree);
         Connection mConnection = dbHelper.createConnection();
         dbHelper.createTables(mConnection);
-        BasicAttributeCollection.collectBasicAtts(sc);
+        BasicAttributeDataCollect.collectBasicAtts(sc);
         dbHelper.insertBend(mConnection, mBend);
     }
 }
